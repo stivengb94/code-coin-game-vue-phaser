@@ -34,13 +34,28 @@ export class Preloader extends Scene
         this.load.image('logo', 'logo.png');
         this.load.image('star', 'star.png');
         
-        this.load.image('platform', 'mario/lgPlatform.png');
-        this.load.image('hills', 'mario/hills.png');
-        this.load.image("bush", "mario/hills.png");
-        this.load.image("coin", "money.png");
-        this.load.spritesheet("dude", "dude.png", {
+        this.load.image('platform', 'platforms/platform2.jpeg');
+        this.load.image("bush", "others/hills.png");
+        this.load.image("iphyton", "others/phyton.png");
+        this.load.image("sql", "others/sql.png");
+        this.load.image("java", "others/java.png");
+
+
+        this.load.image("coin", "others/money.png");
+        this.load.image("coin-phyton", "others/money-phyton.png");
+        this.load.image("coin-sql", "others/money-sql.png");
+        this.load.image("coin-java", "others/money-java.png");
+
+        this.load.image("bgCloud", "bg/bg3.jpg");
+
+        this.load.spritesheet("dude", "players/dude.png", {
             frameWidth: 32,
             frameHeight: 48,
+        });
+
+        this.load.spritesheet("person", "players/person.png", {
+            frameWidth: 135,
+            frameHeight: 203,
         });
     }
 
