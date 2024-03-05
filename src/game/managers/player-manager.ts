@@ -3,7 +3,7 @@ import type { Scene } from "phaser";
 export class PlayerManager {
     player: Phaser.Physics.Arcade.Sprite;
     private scene: Scene;
-    private icon: string = 'dude' 
+    private icon: string = 'person' 
     runSpeed = 500;
     jumpSpeed = -500; // Velocidad vertical inicial del salto
 
@@ -20,17 +20,17 @@ export class PlayerManager {
         let _player = this.scene.physics.add.sprite(50, 0, this.icon);
         _player.setCollideWorldBounds(true);
         _player.setBounce(0.2);
-        //_player.setScale(0.7, 0.7); 
-        _player.setScale(1.5);
+        _player.setScale(0.8, 0.8); 
+        //_player.setScale(1.5);
         this.player = _player
         return this.player;
     }
 
-    /* private createWalkAnimations() {
+    private createWalkAnimations() {
         this.scene.anims.create({
             key: "left",
             frames: this.scene.anims.generateFrameNumbers(this.icon, { start: 8, end: 0 }),
-            frameRate: 10,
+            frameRate: 20,
             repeat: -1,
         });
 
@@ -43,12 +43,12 @@ export class PlayerManager {
         this.scene.anims.create({
             key: "right",
             frames: this.scene.anims.generateFrameNumbers(this.icon, { start: 10, end: 17 }),
-            frameRate: 10,
+            frameRate: 20,
             repeat: -1,
         });
-    }  */
+    } 
 
-   private createWalkAnimations() {
+   /* private createWalkAnimations() {
         this.scene.anims.create({
             key: "left",
             frames: this.scene.anims.generateFrameNumbers(this.icon, { start: 0, end: 3 }),
@@ -68,5 +68,5 @@ export class PlayerManager {
             frameRate: 10,
             repeat: -1,
         });
-    } 
+    }  */
 }

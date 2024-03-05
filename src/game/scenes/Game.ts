@@ -5,6 +5,7 @@ import { ScoreManager } from "../managers/score-manager";
 import { PlatformManager } from "../managers/platform-manager";
 import { CoinManager } from "../managers/coin-manager";
 import { CameraManager } from "../managers/camera-manager";
+import { MetaManager } from "../managers/meta-manager";
 
 export class Game extends Scene {
     //Components
@@ -13,6 +14,8 @@ export class Game extends Scene {
     platformMgr: PlatformManager;
     coinMgr: CoinManager;
     cameraMgr: CameraManager;
+    metaMgr: MetaManager;
+
 
     //Phaser
     player: Phaser.Physics.Arcade.Sprite; // Cambio a Sprite para manejar animaciones
@@ -37,6 +40,8 @@ export class Game extends Scene {
         this.platformMgr = new PlatformManager(this);
         this.coinMgr = new CoinManager(this);
         this.cameraMgr = new CameraManager(this);
+        this.metaMgr = new MetaManager(this);
+
 
         // Phaser
         this.config();
@@ -46,6 +51,7 @@ export class Game extends Scene {
         this.score = this.scoreMgr.draw();
         this.drawPlatforms();
         this.drawCoins();
+        this.drawMeta();
         this.cameraMgr.config({
             player: this.player,
             backgroundHeight: this.backgroundHeight,
@@ -77,6 +83,8 @@ export class Game extends Scene {
         const coins = this.coinMgr.drawMany(5);
         this.physics.add.collider(coins, this.platforms);
     }
+
+    drawMeta = () => this.metaMgr.draw({ x: this.backgroundWidth - 100, collider: this.platforms});
 
     drawPlatforms() {
         this.platforms = this.platformMgr.drawMany(
@@ -122,6 +130,14 @@ export class Game extends Scene {
                 coin.destroy(); // Elimina la moneda del juego
                 // Incrementa la puntuación del jugador
                 this.scoreMgr.increment();
+            }
+
+            if (
+                coin.getData("isMeta") &&
+                this.physics.overlap(this.player, coin)
+            ) {
+                coin.setData("isMeta", false) 
+                alert("Llegaste a la meta")
             }
         });
     }

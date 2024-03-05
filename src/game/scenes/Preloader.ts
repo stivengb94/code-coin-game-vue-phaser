@@ -45,6 +45,7 @@ export class Preloader extends Scene
         this.load.image("coin-phyton", "others/money-phyton.png");
         this.load.image("coin-sql", "others/money-sql.png");
         this.load.image("coin-java", "others/money-java.png");
+        this.load.image("flag-pole", "goal/flagPole.png");
 
         this.load.image("bgCloud", "bg/bg3.jpg");
 
