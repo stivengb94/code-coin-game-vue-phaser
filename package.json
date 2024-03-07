@@ -26,7 +26,8 @@
     },
     "dependencies": {
         "phaser": "^3.80.1",
-        "vue": "^3.4.20"
+        "vue": "^3.4.20",
+        "vuetify": "^3.5.8"
     },
     "devDependencies": {
         "@rushstack/eslint-patch": "^1.7.2",
