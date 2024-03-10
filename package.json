@@ -27,6 +27,7 @@
     "dependencies": {
         "phaser": "^3.80.1",
         "vue": "^3.4.20",
+        "vue-router": "^4.3.0",
         "vuetify": "^3.5.8"
     },
     "devDependencies": {
