@@ -6,6 +6,9 @@ import { PlatformManager } from "../managers/platform-manager";
 import { CoinManager } from "../managers/coin-manager";
 import { CameraManager } from "../managers/camera-manager";
 import { MetaManager } from "../managers/meta-manager";
+import type { GameEntity } from "../entities/GameEntity";
+import { ArgumentsScene } from "../arguments/arguments-scene";
+import type { CoinParams } from "../entities/Params";
 
 export class Game extends Scene {
     //Components
@@ -30,18 +33,28 @@ export class Game extends Scene {
     backgroundHeight = 768; // Altura del fondo
     backgroundScale = 0.5; // Escala del fondo para que cubra toda la pantalla
     numberOfPlatforms = 5; // Número de plataformas que deseas agregar
+    logoTween: Phaser.Tweens.Tween | null;
+
+    numberCoins = 10;
+    params: GameEntity;
+
+
     constructor() {
         super("Game");
     }
+
+    init() {
+        EventBus.emit("current-scene-init", this);
+    }
     create() {
+        this.params = ArgumentsScene.getInstance().getParams() 
         //Managers
         this.playerMgr = new PlayerManager(this);
-        this.scoreMgr = new ScoreManager(this);
+        this.scoreMgr = new ScoreManager(this, this.numberCoins);
         this.platformMgr = new PlatformManager(this);
-        this.coinMgr = new CoinManager(this);
+        this.coinMgr = new CoinManager(this, this.params.buildMoney());
         this.cameraMgr = new CameraManager(this);
         this.metaMgr = new MetaManager(this);
-
 
         // Phaser
         this.config();
@@ -76,11 +89,11 @@ export class Game extends Scene {
 
     drawBush() {
         this.add.image(1055, 420, "bush").setScale(1.5);
-        this.add.image(455, 500, "iphyton").setScale(0.5);
+        this.add.image(455, 500, this.params.buildBush()).setScale(0.5);
     }
 
     drawCoins() {
-        const coins = this.coinMgr.drawMany(5);
+        const coins = this.coinMgr.drawMany(this.numberCoins);
         this.physics.add.collider(coins, this.platforms);
     }
 
@@ -115,7 +128,7 @@ export class Game extends Scene {
 
         //Aplicar movimeinto al score
         if (this.scoreMgr?.scoreText) {
-            const x = this.player.x - this.cameras.main.width / 2 + 10;
+            const x = this.player.x - this.cameras.main.width / 2 + 20;
             this.scoreMgr?.scoreText.setPosition(x, 10);
         }
 
@@ -126,10 +139,12 @@ export class Game extends Scene {
                 coin.getData("isCoin") &&
                 this.physics.overlap(this.player, coin)
             ) {
+                const data: CoinParams = coin.getData("isCoin")
                 // Cuando el jugador recoge una moneda
                 coin.destroy(); // Elimina la moneda del juego
                 // Incrementa la puntuación del jugador
                 this.scoreMgr.increment();
+                EventBus.emit("scene-coin-capture", data);
             }
 
             if (
@@ -137,12 +152,8 @@ export class Game extends Scene {
                 this.physics.overlap(this.player, coin)
             ) {
                 coin.setData("isMeta", false) 
-                alert("Llegaste a la meta")
+                EventBus.emit("scene-finished", true);
             }
         });
-    }
-
-    changeScene() {
-        this.scene.start("GameOver");
     }
 }

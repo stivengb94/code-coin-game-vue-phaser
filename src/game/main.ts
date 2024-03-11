@@ -1,7 +1,5 @@
 import { Boot } from './scenes/Boot';
-import { GameOver } from './scenes/GameOver';
 import { Game as MainGame } from './scenes/Game';
-import { MainMenu } from './scenes/MainMenu';
 import Phaser from 'phaser';
 import { Preloader } from './scenes/Preloader';
 
@@ -17,20 +15,17 @@ const config: Phaser.Types.Core.GameConfig = {
         default: 'arcade',
         arcade: {
             gravity: {y: 800, x:0},
-            debug: false, // Cambia a true para ver los contornos de colisión
+            debug: true, // Cambia a true para ver los contornos de colisión
         },
     },
     scene: [
         Boot,
         Preloader,
-        MainMenu,
-        MainGame,
-        GameOver
+        MainGame
     ]
 };
 
 const StartGame = (parent: string) => {
-
     return new Phaser.Game({...config, parent: parent});
 
 }

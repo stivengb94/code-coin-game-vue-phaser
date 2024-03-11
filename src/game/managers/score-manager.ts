@@ -2,11 +2,14 @@ import type { Scene } from "phaser";
 
 export class ScoreManager {
     scoreText: Phaser.GameObjects.Text; // Nuevo atributo para el texto del puntaje
-    score: number = 0;
+    total: number = 0;
+    count: number = 0;
+
 
     private scene: Scene;
-    constructor(scene: Scene) { 
+    constructor(scene: Scene, total: number) { 
         this.scene = scene;
+        this.total = total;
         this.init();
     }
     
@@ -15,7 +18,7 @@ export class ScoreManager {
     draw() : Phaser.GameObjects.Text
     {
         this.scoreText = this.scene.add
-            .text(10, 10, `Score: ${this.score}`, {
+            .text(10, 10, `${this.count} / ${this.total} Monedas`, {
                 fontFamily: "Arial Black",
                 fontSize: 38,
                 color: "#ffffff",
@@ -29,7 +32,7 @@ export class ScoreManager {
 
     increment() {
         // Incrementa la puntuación del jugador
-        this.score += 10; // Incrementa la puntuación en 10 puntos por cada moneda
-        this.scoreText.setText(`Score: ${this.score}`);
+        this.count += 1; // Incrementa la puntuación en 10 puntos por cada moneda
+        this.scoreText.setText(`${this.count} / ${this.total} Monedas`);
     }
 }
