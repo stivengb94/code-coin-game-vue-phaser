@@ -2,8 +2,8 @@ import type { Languages, Levels } from "@/utils/utils";
 
 export class GameEntity {
     constructor(
-      public programingCode: Languages,
-      public levelCode: Levels,
+      public programingCode: Languages = 'python',
+      public levelCode: Levels = 'basic',
     ) { }
     
     buildMoney(): string {

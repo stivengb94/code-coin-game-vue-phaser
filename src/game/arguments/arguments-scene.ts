@@ -1,9 +1,9 @@
-import type { GameEntity } from "../entities/GameEntity";
+import { GameEntity } from "../entities/GameEntity";
 
 
 export class ArgumentsScene {
   private static _instancia: ArgumentsScene;
-  params: GameEntity;
+  params: GameEntity ;
 
   private constructor() {}
 
@@ -19,6 +19,6 @@ export class ArgumentsScene {
   }
 
   getParams(): GameEntity {
-    return this.params;
+    return this.params ?? new GameEntity();
   }
 }

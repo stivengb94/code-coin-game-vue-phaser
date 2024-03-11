@@ -17,10 +17,12 @@ const emit = defineEmits(['current-active-scene']);
 
 onMounted(() => {
     game.value = StartGame('game-container');
-    let level = router.currentRoute.value.query.level as Levels;
-    let languaje = router.currentRoute.value.query.programingCode as Languages;
-    const params= new GameEntity(languaje, level)
-    ArgumentsScene.getInstance().setParams(params)
+    if (router.currentRoute.value.query) {
+        let level = router.currentRoute.value.query.level as Levels;
+        let languaje = router.currentRoute.value.query.programingCode as Languages;
+        ArgumentsScene.getInstance().setParams(new GameEntity(languaje, level))
+    }
+   
     EventBus.on('current-scene-ready', (scene_instance: Phaser.Scene) => {
         emit('current-active-scene', scene_instance);
         scene.value = scene_instance;
