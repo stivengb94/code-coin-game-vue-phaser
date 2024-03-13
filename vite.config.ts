@@ -30,7 +30,12 @@ export default defineConfig({
         }),
     ],
     resolve: {
-        alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+        alias: [
+            { find: "@di", replacement: path.resolve(__dirname, "src/di") },
+            { find: "@domain", replacement: path.resolve(__dirname, "src/domain") },
+            { find: "@infraestructure", replacement: path.resolve(__dirname, "src/infraestructure") },
+            { find: "@presentation", replacement: path.resolve(__dirname, "src/presentation") }
+        ],
     },
     css: {
         preprocessorOptions: {

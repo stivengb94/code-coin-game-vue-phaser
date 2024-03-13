@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Phaser from 'phaser';
 import { ref, toRaw } from 'vue';
-import PhaserGame from '@/game/PhaserGame.vue';
+import PhaserGame from '@presentation/game/PhaserGame.vue';
 //  References to the PhaserGame component (game and scene are exposed)
 const phaserRef = ref();
 // Event emitted from the PhaserGame component

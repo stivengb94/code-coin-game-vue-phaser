@@ -8,7 +8,10 @@
     "baseUrl": "./src",
     "strictPropertyInitialization": false,
     "paths": {
-      "@/*": ["./*"],
+      "@di/*": ["./di/*"],
+      "@domain/*": ["./domain/*"],
+      "@infraestructure/*": ["./infraestructure/*"],
+      "@presentation/*": ["./presentation/*"],
     }
   }
 }
