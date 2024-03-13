@@ -1,5 +1,6 @@
 export * from '@infraestructure/repositories/category-impl.repository'
 export * from '@infraestructure/repositories/category-level-impl.repository'
+export * from '@infraestructure/manager/category.manager'
 export * from '@infraestructure/repositories/learning-impl.repository'
 export * from '@infraestructure/repositories/quizz-impl.repository'
 
