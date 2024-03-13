@@ -31,4 +31,22 @@ export class CategoryLevelManager {
         })
         return levelsWithResult;
     }
+
+    static calProgress(levelsWithResult: CategoryLevel[]): number {
+        const totalLevels = levelsWithResult.length
+        const totalFinished = this.calFinished(levelsWithResult)
+        const progress = totalLevels > 0 ? (totalFinished* 100) / totalLevels : 0;
+        return progress;
+    }
+
+    static calFinished = (levelsWithResult: CategoryLevel[]): number =>
+        levelsWithResult.filter(a => a.totalQuestions > 0).length
+
+    static calAverageScore(levelsWithResult: CategoryLevel[]): number {
+        const totalScores = levelsWithResult.reduce((accumulator, currentLevel) => {
+            return accumulator + currentLevel.score;
+        }, 0);
+        const averageScore = levelsWithResult.length > 0 ? totalScores / levelsWithResult.length : 0;
+        return averageScore;
+    }
 }
