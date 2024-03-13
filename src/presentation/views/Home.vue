@@ -11,7 +11,7 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in categories" :key="index">
-            <td><img :src="'/assets/img/game/code/' + item.logo" height="130" alt="" srcset=""></td>
+            <td><img :src="'/assets/img/game/code/' + item.logo" alt="" srcset=""></td>
             <td>Aprender {{ item.name }}</td>
             <td><b>{{ item.score }}%</b></td>
             <td><b>{{ item.progress }}%</b></td>
@@ -94,7 +94,7 @@ const progressGlobal = computed(
       min-width: 300px;
 
       img {
-        width: 60%;
+        height: 70pt;
       }
 
       b {
