@@ -33,7 +33,7 @@
       <div class="fotter">
         <v-row justify="center">
           <v-col class="btn-reiniciar" cols="12" md="4" sm="6">
-            <v-btn color="indigo-darken-3" size="x-large" rounded="lg" block>Reiniciar</v-btn>
+            <v-btn color="indigo-darken-3" rounded="lg" block>Reiniciar</v-btn>
           </v-col>
           <v-col class="avance" cols="12" md="8" sm="6">
             <v-row justify="rigth">
@@ -61,37 +61,38 @@
   align-content: center;
   justify-content: center;
   align-items: center;
+  --fontSize: 5pt;
 
   thead {
     text-align: center;
   }
 
   h1 {
-    font-size: 50px;
+    font-size: calc(var(--fontSize) + 20pt);
     text-align: center;
   }
 
   table {
     width: 100%;
-    font-size: 30px;
+    font-size:  calc(var(--fontSize) + 10pt);
 
     td {
       text-align: center;
       min-width: 300px;
 
       img {
-        width: 300px;
+        width: 60%;
       }
 
       b {
-        font-size: 40px;
+        font-size:  calc(var(--fontSize) + 15pt);
       }
     }
   }
 
   .fotter {
     .label {
-      font-size: 30px;
+      font-size:  calc(var(--fontSize) + 10pt);
     }
 
     .avance {
@@ -103,9 +104,9 @@
       align-items: center;
 
       button {
-        font-size: 30px;
+        font-size:  calc(var(--fontSize) + 10pt);
         .v-btn__content {
-          font-size: 30px;
+          font-size: calc(var(--fontSize) + 10pt);
         }
       }
     }
