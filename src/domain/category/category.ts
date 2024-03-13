@@ -1,13 +1,15 @@
 export class Category{
     constructor(
         public name: string,
-        public code: CategoryType,
+        public code: CategoryCode,
+        public logo: string,
         public score: number = 0,
         public progress: number = 0,
+
       ) { }
 }
 
-export enum CategoryType {
+export enum CategoryCode {
     Python = 'python',
     Sql = 'sql',
     Java = 'java',

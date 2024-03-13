@@ -51,4 +51,4 @@ defineExpose({ scene, game });
 
 <template>
     <div id="game-container"></div>
-</template>@/presentation/utils/utils@/presentation/utils/utils
+</template>

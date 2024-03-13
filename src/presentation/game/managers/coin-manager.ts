@@ -6,7 +6,7 @@ export class CoinManager {
     private scene: Scene;
     icon: string;
 
-    constructor(scene: Scene, icon: string = 'coin-phyton') {
+    constructor(scene: Scene, icon: string = 'coin-python') {
         this.scene = scene;
         this.icon = icon;
         this.init();

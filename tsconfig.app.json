@@ -11,7 +11,7 @@
       "@di/*": ["./di/*"],
       "@domain/*": ["./domain/*"],
       "@infraestructure/*": ["./infraestructure/*"],
-      "@presentation/*": ["./presentation/*"],
+      "@presentation/*": ["./presentation/*"]  
     }
   }
 }

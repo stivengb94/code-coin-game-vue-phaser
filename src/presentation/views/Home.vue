@@ -10,23 +10,11 @@
           <th>Avance</th>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="../assets/img/java.png" alt="" srcset=""></td>
-            <td>Aprender Java</td>
-            <td><b>0%</b></td>
-            <td><b>0%</b></td>
-          </tr>
-          <tr>
-            <td><img src="../assets/img/python.png" alt="" srcset=""></td>
-            <td>Aprender Python</td>
-            <td><b>0%</b></td>
-            <td><b>0%</b></td>
-          </tr>
-          <tr>
-            <td><img src="../assets/img/sql.png" alt="" srcset=""></td>
-            <td>Aprender SQL</td>
-            <td><b>0%</b></td>
-            <td><b>0%</b></td>
+          <tr v-for="(item, index) in categories" :key="index">
+            <td><img :src="'/assets/img/game/code/' + item.logo" height="130" alt="" srcset=""></td>
+            <td>Aprender {{ item.name }}</td>
+            <td><b>{{ item.score }}%</b></td>
+            <td><b>{{ item.progress }}%</b></td>
           </tr>
         </tbody>
       </table>
@@ -38,11 +26,11 @@
           <v-col class="avance" cols="12" md="8" sm="6">
             <v-row justify="rigth">
               <v-col class="label" cols="12" md="10" sm="10">Puntaje global</v-col>
-              <v-col class="label" cols="12" md="2" sm="2"><b>0%</b></v-col>
+              <v-col class="label" cols="12" md="2" sm="2"><b>{{scoreGlobal}}%</b></v-col>
             </v-row>
             <v-row justify="rigth">
               <v-col class="label" cols="12" md="10" sm="10">Avance global</v-col>
-              <v-col class="label" cols="12" md="2" sm="2"><b>0%</b></v-col>
+              <v-col class="label" cols="12" md="2" sm="2"><b>{{progressGlobal}}%</b></v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -50,6 +38,31 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { AppModules, Ioc } from '@di/index'
+import { Category, type CategoryRepository } from '@domain/index';
+import { computed, onMounted, ref } from 'vue';
+
+const categories = ref<Category[]>([]);
+const categoryRepository = Ioc.instance.di.resolve<CategoryRepository>(AppModules.Category)
+
+onMounted(async () => {
+  categories.value = await categoryRepository.list();
+});
+
+const scoreGlobal = computed(
+  () =>  (categories.value.reduce((accumulator, currentLevel) => {
+    return accumulator + currentLevel.score;
+  }, 0)) / categories.value.length);
+
+const progressGlobal = computed(
+  () =>  (categories.value.reduce((accumulator, currentLevel) => {
+    return accumulator + currentLevel.progress;
+  }, 0)) / categories.value.length);
+
+</script>
+
 
 <style lang="scss" scoped>
 .home {
@@ -74,7 +87,7 @@
 
   table {
     width: 100%;
-    font-size:  calc(var(--fontSize) + 10pt);
+    font-size: calc(var(--fontSize) + 10pt);
 
     td {
       text-align: center;
@@ -85,14 +98,14 @@
       }
 
       b {
-        font-size:  calc(var(--fontSize) + 15pt);
+        font-size: calc(var(--fontSize) + 15pt);
       }
     }
   }
 
   .fotter {
     .label {
-      font-size:  calc(var(--fontSize) + 10pt);
+      font-size: calc(var(--fontSize) + 10pt);
     }
 
     .avance {
@@ -104,7 +117,8 @@
       align-items: center;
 
       button {
-        font-size:  calc(var(--fontSize) + 10pt);
+        font-size: calc(var(--fontSize) + 10pt);
+
         .v-btn__content {
           font-size: calc(var(--fontSize) + 10pt);
         }

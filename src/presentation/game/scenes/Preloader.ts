@@ -30,19 +30,17 @@ export class Preloader extends Scene
     preload ()
     {
         //  Load the assets for the game - Replace with your own assets
-        this.load.setPath('assets');
-        this.load.image('logo', 'logo.png');
-        this.load.image('star', 'star.png');
-        
+        this.load.setPath('assets/game');
+
         this.load.image('platform', 'platforms/platform1.jpeg');
         this.load.image("bush", "others/hills.png");
-        this.load.image("iphyton", "others/phyton.png");
-        this.load.image("sql", "others/sql.png");
-        this.load.image("java", "others/java.png");
+        this.load.image("python", "others/python_platform.png");
+        this.load.image("sql", "others/sql_platform.png");
+        this.load.image("java", "others/java_platform.png");
 
 
         this.load.image("coin", "others/money.png");
-        this.load.image("coin-phyton", "others/money-phyton.png");
+        this.load.image("coin-python", "others/money-python.png");
         this.load.image("coin-sql", "others/money-sql.png");
         this.load.image("coin-java", "others/money-java.png");
         this.load.image("flag-pole", "goal/flagPole.png");

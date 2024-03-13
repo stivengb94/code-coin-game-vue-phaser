@@ -1,7 +1,24 @@
-import { CategoryRepositoryImpl, LearningLevelRepositoryImpl } from "@infraestructure/index";
+import { CategoryLevelRepositoryImpl, CategoryRepositoryImpl, LearningRepositoryImpl, QuizzRepositoryImpl } from "@infraestructure/index";
 import { AppModules, Container } from ".";
 
-const di = new Container();
+export class Ioc {
+    private static _instancia: Ioc;
+    di = new Container();
+    private constructor() {
+        this.ini()
+     }
+    
+     static get instance(): Ioc {
+      if (!Ioc._instancia) {
+        Ioc._instancia = new Ioc();
+      }
+      return Ioc._instancia;
+    }
 
-di.register(AppModules.Category, new CategoryRepositoryImpl());
-di.register(AppModules.Category, new LearningLevelRepositoryImpl());
+    ini() {
+        this.di.register(AppModules.Category, new CategoryRepositoryImpl());
+        this.di.register(AppModules.Quizz, new QuizzRepositoryImpl());
+        this.di.register(AppModules.Learning, new LearningRepositoryImpl());
+        this.di.register(AppModules.CategoryLevel, new CategoryLevelRepositoryImpl());
+    }
+  }

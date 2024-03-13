@@ -9,7 +9,7 @@ export class GameEntity {
         const value: Record<string, string> = {
             "java": "coin-java",
             "sql": "coin-sql",
-            "python":"coin-phyton"
+            "python":"coin-python"
         };
         return value[this.programingCode] ?? 'coin'
     }
@@ -18,9 +18,9 @@ export class GameEntity {
         const value: Record<string, string> = {
             "java": "java",
             "sql": "sql",
-            "python":"iphyton"
+            "python":"python"
         };
-        return value[this.programingCode] ?? 'iphyton'
+        return value[this.programingCode] ?? 'python'
     }
 }
   
