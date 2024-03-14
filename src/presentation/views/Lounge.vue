@@ -62,33 +62,73 @@
         </v-col>
       </v-row>
       <br />
-      <v-row no-gutters>
-        <v-col>
-          <v-card class="mx-auto" max-width="600" title="Nivel Basico">
+      <v-row no-gutters class="lounge__content__main_row">
+        <v-col class="lounge__content__main_row__col_main">
+          <v-card
+            class="mx-auto lounge__content__main_row__col_main__card"
+            max-width="600"
+          ><template v-slot:title>
+            <span class="lounge__content__main_row__col_main__card__title">Nivel Basico</span>
+          </template>
             <template v-slot:prepend>
-              <v-avatar color="blue-darken-2">
+              <v-avatar
+                color="blue-darken-2"
+                class="lounge__content__main_row__col_main__card__prepend"
+              >
                 <v-icon icon="mdi-alarm"></v-icon>
               </v-avatar>
             </template>
-            <v-card-text>
-              <v-row>
-                <v-col cols="3">
-                  <v-avatar size="80">
+            <v-card-text
+              class="lounge__content__main_row__col_main__card__text"
+            >
+              <v-row
+                class="lounge__content__main_row__col_main__card__text__row"
+              >
+                <v-col
+                  cols="3"
+                  class="lounge__content__main_row__col_main__card__text__row__col"
+                >
+                  <v-avatar
+                    size="80"
+                    class="lounge__content__main_row__col_main__card__text__row__col__avatar"
+                  >
                     <v-img
                       alt="John"
+                      class="lounge__content__main_row__col_main__card__text__row__col__avatar__img"
                       src="/assets/img/game/others/money-java.png"
                     ></v-img>
                   </v-avatar>
                 </v-col>
-                <v-col cols="9">
-                  <v-row no-gutters>
-                    <v-col cols="12">
-                      <span>Resultado <strong>0/5</strong></span>
+                <v-col
+                  cols="9"
+                  class="lounge__content__main_row__col_main__card__text__row__col"
+                >
+                  <v-row
+                    no-gutters
+                    class="lounge__content__main_row__col_main__card__text__row__col__row"
+                  >
+                    <v-col
+                      cols="12"
+                      class="lounge__content__main_row__col_main__card__text__row__col__row__col"
+                    >
+                      <span
+                        class="lounge__content__main_row__col_main__card__text__row__col__row__col__result"
+                        >Resultado <strong>0/5</strong></span
+                      >
                     </v-col>
                   </v-row>
-                  <v-row no-gutters>
-                    <v-col cols="12">
-                      <span>Puntaje <strong>0%</strong></span>
+                  <v-row
+                    no-gutters
+                    class="lounge__content__main_row__col_main__card__text__row__col__row"
+                  >
+                    <v-col
+                      cols="12"
+                      class="lounge__content__main_row__col_main__card__text__row__col__row__col"
+                    >
+                      <span
+                        class="lounge__content__main_row__col_main__card__text__row__col__row__col__point"
+                        >Puntaje <strong>0%</strong></span
+                      >
                     </v-col>
                   </v-row>
                 </v-col>
@@ -96,32 +136,72 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col>
-          <v-card class="mx-auto" max-width="600" title="Nivel Basico">
+        <v-col class="lounge__content__main_row__col_main">
+          <v-card
+            class="mx-auto lounge__content__main_row__col_main__card"
+            max-width="600"
+          ><template v-slot:title>
+            <span class="lounge__content__main_row__col_main__card__title">Nivel Basico</span>
+          </template>
             <template v-slot:prepend>
-              <v-avatar color="blue-darken-2">
+              <v-avatar
+                color="blue-darken-2"
+                class="lounge__content__main_row__col_main__card__prepend"
+              >
                 <v-icon icon="mdi-alarm"></v-icon>
               </v-avatar>
             </template>
-            <v-card-text>
-              <v-row>
-                <v-col cols="3">
-                  <v-avatar size="80">
+            <v-card-text
+              class="lounge__content__main_row__col_main__card__text"
+            >
+              <v-row
+                class="lounge__content__main_row__col_main__card__text__row"
+              >
+                <v-col
+                  cols="3"
+                  class="lounge__content__main_row__col_main__card__text__row__col"
+                >
+                  <v-avatar
+                    size="80"
+                    class="lounge__content__main_row__col_main__card__text__row__col__avatar"
+                  >
                     <v-img
                       alt="John"
+                      class="lounge__content__main_row__col_main__card__text__row__col__avatar__img"
                       src="/assets/img/game/others/money-java.png"
                     ></v-img>
                   </v-avatar>
                 </v-col>
-                <v-col cols="9">
-                  <v-row no-gutters>
-                    <v-col cols="12">
-                      <span>Resultado <strong>0/5</strong></span>
+                <v-col
+                  cols="9"
+                  class="lounge__content__main_row__col_main__card__text__row__col"
+                >
+                  <v-row
+                    no-gutters
+                    class="lounge__content__main_row__col_main__card__text__row__col__row"
+                  >
+                    <v-col
+                      cols="12"
+                      class="lounge__content__main_row__col_main__card__text__row__col__row__col"
+                    >
+                      <span
+                        class="lounge__content__main_row__col_main__card__text__row__col__row__col__result"
+                        >Resultado <strong>0/5</strong></span
+                      >
                     </v-col>
                   </v-row>
-                  <v-row no-gutters>
-                    <v-col cols="12">
-                      <span>Puntaje <strong>0%</strong></span>
+                  <v-row
+                    no-gutters
+                    class="lounge__content__main_row__col_main__card__text__row__col__row"
+                  >
+                    <v-col
+                      cols="12"
+                      class="lounge__content__main_row__col_main__card__text__row__col__row__col"
+                    >
+                      <span
+                        class="lounge__content__main_row__col_main__card__text__row__col__row__col__point"
+                        >Puntaje <strong>0%</strong></span
+                      >
                     </v-col>
                   </v-row>
                 </v-col>
@@ -177,6 +257,7 @@ const progressGlobal = computed(
 
   &__content {
     max-width: 80%;
+
     &__main_row {
       &__col_main {
         &__row {
@@ -202,6 +283,30 @@ const progressGlobal = computed(
             }
             &__point {
               font-size: calc(var(--fontSize) + 15pt);
+            }
+          }
+        }
+        &__card {
+          max-width: 95% !important;
+          &__title {
+            font-size: calc(var(--fontSize) + 20pt) !important;
+          }
+          &__text {
+            &__row {
+              &__col {
+                &__row {
+                  &__col {
+                    &__result {
+                      font-size: calc(var(--fontSize) + 13pt);
+                      text-align: center;
+                    }
+                    &__point {
+                      font-size: calc(var(--fontSize) + 13pt);
+                      text-align: center;
+                    }
+                  }
+                }
+              }
             }
           }
         }
