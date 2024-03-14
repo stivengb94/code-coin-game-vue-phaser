@@ -21,7 +21,7 @@
               >
             </v-col>
             <v-col
-              class="lounge__content__main_row__col_main__row__col"
+              class="lounge__content__main_row__col_main__row__col point"
               cols="12"
               sm="3"
             >
@@ -59,6 +59,75 @@
               >
             </v-col>
           </v-row>
+        </v-col>
+      </v-row>
+      <br />
+      <v-row no-gutters>
+        <v-col>
+          <v-card class="mx-auto" max-width="600" title="Nivel Basico">
+            <template v-slot:prepend>
+              <v-avatar color="blue-darken-2">
+                <v-icon icon="mdi-alarm"></v-icon>
+              </v-avatar>
+            </template>
+            <v-card-text>
+              <v-row>
+                <v-col cols="3">
+                  <v-avatar size="80">
+                    <v-img
+                      alt="John"
+                      src="/assets/img/game/others/money-java.png"
+                    ></v-img>
+                  </v-avatar>
+                </v-col>
+                <v-col cols="9">
+                  <v-row no-gutters>
+                    <v-col cols="12">
+                      <span>Resultado <strong>0/5</strong></span>
+                    </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                    <v-col cols="12">
+                      <span>Puntaje <strong>0%</strong></span>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card class="mx-auto" max-width="600" title="Nivel Basico">
+            <template v-slot:prepend>
+              <v-avatar color="blue-darken-2">
+                <v-icon icon="mdi-alarm"></v-icon>
+              </v-avatar>
+            </template>
+            <v-card-text>
+              <v-row>
+                <v-col cols="3">
+                  <v-avatar size="80">
+                    <v-img
+                      alt="John"
+                      src="/assets/img/game/others/money-java.png"
+                    ></v-img>
+                  </v-avatar>
+                </v-col>
+                <v-col cols="9">
+                  <v-row no-gutters>
+                    <v-col cols="12">
+                      <span>Resultado <strong>0/5</strong></span>
+                    </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                    <v-col cols="12">
+                      <span>Puntaje <strong>0%</strong></span>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -115,16 +184,24 @@ const progressGlobal = computed(
             display: flex;
             align-items: center;
             justify-content: center;
+            &.point {
+              display: flex;
+              justify-content: flex-end;
+            }
             &__img {
+              margin-top: -10px;
+              height: 70pt;
+            }
+            &__img_point {
               height: 70pt;
             }
             &__label_languaje {
-              font-size: calc(var(--fontSize) + 10pt);
+              font-size: calc(var(--fontSize) + 15pt);
               text-align: center;
               padding-left: 10px;
             }
             &__point {
-                font-size: calc(var(--fontSize) + 15pt);
+              font-size: calc(var(--fontSize) + 15pt);
             }
           }
         }
