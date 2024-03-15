@@ -7,6 +7,10 @@ export class CategoryRepositoryImpl implements CategoryRepository{
         QuizLocalManager.restart();
     }
    
+    getCategory(code: CategoryCode): Promise<Category | undefined> {
+        return Promise.resolve(CategoryManager.getByCode(code))
+    }
+   
     list(): Promise<Category[]> {
         return Promise.resolve(CategoryManager.getResult())
     }

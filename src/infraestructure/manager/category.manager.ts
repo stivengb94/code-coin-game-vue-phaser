@@ -11,6 +11,16 @@ export class CategoryManager {
         new Category('Sql', CategoryCode.Sql,'sql.png')
     ]
 
+    static getByCode = (code: string): Category | undefined => {
+        const result = CategoryManager.categories().map(item => {
+            let results = CategoryLevelManager.getResult(item.code)
+            item.score = CategoryLevelManager.calAverageScore(results)
+            item.progress = CategoryLevelManager.calProgress(results)
+            return item
+        }).find((v) => v.code == code);
+        return result;
+    }
+
     static getResult = (): Category[] => {
         const result = CategoryManager.categories().map(item => {
             let results = CategoryLevelManager.getResult(item.code)

@@ -11,13 +11,13 @@
             >
               <img
                 class="lounge__content__main_row__col_main__row__col__img"
-                src="/assets/img/game/code/java.png"
+                :src="'/assets/img/game/code/' + categorie?.logo"
                 alt=""
                 srcset=""
               />
               <span
                 class="lounge__content__main_row__col_main__row__col__label_languaje"
-                >Bienvenido al salon Java</span
+                >Bienvenido al salon {{ categorie?.name ?? '' }}</span
               >
             </v-col>
             <v-col
@@ -27,7 +27,7 @@
             >
               <img
                 class="lounge__content__main_row__col_main__row__col__img"
-                src="/assets/img/game/others/java_platform.png"
+                :src="'/assets/img/game/others/' + categorie?.code + '_platform.png'"
                 alt=""
                 srcset=""
               />
@@ -43,7 +43,7 @@
             >
               <strong
                 class="lounge__content__main_row__col_main__row__col__point"
-                >Puntaje 0%</strong
+                >Puntaje {{categorie?.score}}%</strong
               >
             </v-col>
           </v-row>
@@ -55,7 +55,7 @@
             >
               <strong
                 class="lounge__content__main_row__col_main__row__col__point"
-                >Avance 0%</strong
+                >Avance {{categorie?.progress}}%</strong
               >
             </v-col>
           </v-row>
@@ -67,9 +67,11 @@
           <v-card
             class="mx-auto lounge__content__main_row__col_main__card"
             max-width="600"
-          ><template v-slot:title>
-            <span class="lounge__content__main_row__col_main__card__title">Nivel Basico</span>
-          </template>
+            ><template v-slot:title>
+              <span class="lounge__content__main_row__col_main__card__title"
+                >Nivel Basico</span
+              >
+            </template>
             <template v-slot:prepend>
               <v-avatar
                 color="blue-darken-2"
@@ -88,7 +90,7 @@
                   cols="3"
                   class="lounge__content__main_row__col_main__card__text__row__col"
                 >
-                  <v-avatar
+                  <div
                     size="80"
                     class="lounge__content__main_row__col_main__card__text__row__col__avatar"
                   >
@@ -97,7 +99,7 @@
                       class="lounge__content__main_row__col_main__card__text__row__col__avatar__img"
                       src="/assets/img/game/others/money-java.png"
                     ></v-img>
-                  </v-avatar>
+                  </div>
                 </v-col>
                 <v-col
                   cols="9"
@@ -140,9 +142,11 @@
           <v-card
             class="mx-auto lounge__content__main_row__col_main__card"
             max-width="600"
-          ><template v-slot:title>
-            <span class="lounge__content__main_row__col_main__card__title">Nivel Basico</span>
-          </template>
+            ><template v-slot:title>
+              <span class="lounge__content__main_row__col_main__card__title"
+                >Nivel Basico</span
+              >
+            </template>
             <template v-slot:prepend>
               <v-avatar
                 color="blue-darken-2"
@@ -161,7 +165,7 @@
                   cols="3"
                   class="lounge__content__main_row__col_main__card__text__row__col"
                 >
-                  <v-avatar
+                  <div
                     size="80"
                     class="lounge__content__main_row__col_main__card__text__row__col__avatar"
                   >
@@ -170,7 +174,7 @@
                       class="lounge__content__main_row__col_main__card__text__row__col__avatar__img"
                       src="/assets/img/game/others/money-java.png"
                     ></v-img>
-                  </v-avatar>
+                  </div>
                 </v-col>
                 <v-col
                   cols="9"
@@ -218,30 +222,35 @@ import { AppModules, Ioc } from "@di/index";
 import { Category, type CategoryRepository } from "@domain/index";
 import { computed, onMounted, ref } from "vue";
 
-const categories = ref<Category[]>([]);
+import { useRoute } from 'vue-router';2
+
+const route = useRoute();
+
+const categorie = ref<Category>();
 const categoryRepository = Ioc.instance.di.resolve<CategoryRepository>(
   AppModules.Category
 );
 
 onMounted(async () => {
-  categories.value = await categoryRepository.list();
+  categorie.value = await categoryRepository.getCategory(
+    route.query?.programingCode
+  );
 });
 
 const scoreGlobal = computed(
   () =>
-    categories.value.reduce((accumulator, currentLevel) => {
+    categorie.value.reduce((accumulator, currentLevel) => {
       return accumulator + currentLevel.score;
-    }, 0) / categories.value.length
+    }, 0) / categorie.value.length
 );
 
 const progressGlobal = computed(
   () =>
-    categories.value.reduce((accumulator, currentLevel) => {
+    categorie.value.reduce((accumulator, currentLevel) => {
       return accumulator + currentLevel.progress;
-    }, 0) / categories.value.length
+    }, 0) / categorie.value.length
 );
 </script>
-
 
 <style lang="scss" scoped>
 .lounge {
@@ -274,7 +283,7 @@ const progressGlobal = computed(
               height: 70pt;
             }
             &__img_point {
-              height: 70pt;
+              height: 75pt;
             }
             &__label_languaje {
               font-size: calc(var(--fontSize) + 15pt);
@@ -294,15 +303,26 @@ const progressGlobal = computed(
           &__text {
             &__row {
               &__col {
+                align-self: center;
                 &__row {
                   &__col {
                     &__result {
                       font-size: calc(var(--fontSize) + 13pt);
                       text-align: center;
+                      height: 20px;
+                      strong {
+                        text-align: right;
+                        float: right;
+                      }
                     }
                     &__point {
                       font-size: calc(var(--fontSize) + 13pt);
                       text-align: center;
+                      height: 20px;
+                      strong {
+                        text-align: right;
+                        float: right;
+                      }
                     }
                   }
                 }
