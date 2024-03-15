@@ -10,7 +10,7 @@
           <th>Avance</th>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in categories" :key="index">
+          <tr v-for="(item, index) in categories" :key="index" @click="navigateLevel(item)">
             <td><img :src="'/assets/img/game/code/' + item.logo" alt="" srcset=""></td>
             <td>Aprender {{ item.name }}</td>
             <td><b>{{ item.score }}%</b></td>
@@ -21,7 +21,7 @@
       <div class="fotter">
         <v-row justify="center">
           <v-col class="btn-reiniciar" cols="12" md="4" sm="6">
-            <v-btn color="indigo-darken-3" rounded="lg" block>Reiniciar</v-btn>
+            <v-btn @click="restart" color="indigo-darken-3" rounded="lg" block>Reiniciar</v-btn>
           </v-col>
           <v-col class="avance" cols="12" md="8" sm="6">
             <v-row justify="rigth">
@@ -42,10 +42,13 @@
 <script setup lang="ts">
 import { AppModules, Ioc } from '@di/index'
 import { Category, type CategoryRepository } from '@domain/index';
+import { LOUNGE } from '@presentation/routes/routes-paths';
 import { computed, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const categories = ref<Category[]>([]);
 const categoryRepository = Ioc.instance.di.resolve<CategoryRepository>(AppModules.Category)
+const router = useRouter();
 
 onMounted(async () => {
   categories.value = await categoryRepository.list();
@@ -60,6 +63,18 @@ const progressGlobal = computed(
   () =>  (categories.value.reduce((accumulator, currentLevel) => {
     return accumulator + currentLevel.progress;
   }, 0)) / categories.value.length);
+
+const navigateLevel = async (category: Category ) => {
+  router.push({
+        path: LOUNGE,
+        query: { categoryCode: category.code }
+    });
+}
+
+const restart = async ()  => {
+  await categoryRepository.restart()
+  categories.value = await categoryRepository.list();
+}
 
 </script>
 
@@ -88,6 +103,10 @@ const progressGlobal = computed(
   table {
     width: 100%;
     font-size: calc(var(--fontSize) + 10pt);
+
+    tr {
+      cursor: pointer;
+    }
 
     td {
       text-align: center;

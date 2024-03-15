@@ -12,11 +12,11 @@ export class CategoryLevelManager {
     
     static getLogo = (category: CategoryCode) =>  {
         const logos: Record<CategoryCode, string> = {
-            [CategoryCode.Python]: 'money-phyton.png',
+            [CategoryCode.Python]: 'money-python.png',
             [CategoryCode.Sql]: 'money-sql.png',
             [CategoryCode.Java]: 'money-java.png'
         };
-        return logos[category] ?? 'money-phyton.png';
+        return logos[category] ?? 'money-python.png';
     }
 
     static getResult = (categoryCode: CategoryCode): CategoryLevel[] => {

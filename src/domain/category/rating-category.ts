@@ -1,7 +1,10 @@
 export class RatingCategory{
-    constructor(
+  constructor(
+        public categoryName: string,
         public score: number,
         public progress: number,
-        public logo: string
+        public categoryLogo: string,
+        public categoryLevelLogo: string
+
       ) { }
 }

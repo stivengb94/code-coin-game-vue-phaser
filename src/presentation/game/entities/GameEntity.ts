@@ -1,8 +1,9 @@
+import { CategoryCode, LevelCode } from "@domain/index";
 
 export class GameEntity {
     constructor(
-      public programingCode:  string = 'python',
-      public levelCode:  string = 'basic',
+      public categoryCode:  CategoryCode = CategoryCode.Python,
+      public levelCode:  LevelCode = LevelCode.basic,
     ) { }
     
     buildMoney(): string {
@@ -11,7 +12,7 @@ export class GameEntity {
             "sql": "coin-sql",
             "python":"coin-python"
         };
-        return value[this.programingCode] ?? 'coin'
+        return value[this.categoryCode] ?? 'coin'
     }
 
     buildBush(): string {
@@ -20,7 +21,7 @@ export class GameEntity {
             "sql": "sql",
             "python":"python"
         };
-        return value[this.programingCode] ?? 'python'
+        return value[this.categoryCode] ?? 'python'
     }
 }
   

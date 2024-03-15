@@ -7,6 +7,7 @@ import  { GameEntity } from './entities/GameEntity';
 import { useRouter } from 'vue-router';
 import { ArgumentsScene } from './arguments/arguments-scene';
 import type { CoinParams } from './entities/Params';
+import type { CategoryCode, LevelCode } from '@domain/index';
 const router = useRouter();
 // Save the current scene instance
 const scene = ref();
@@ -17,9 +18,9 @@ const emit = defineEmits(['current-active-scene']);
 onMounted(() => {
     game.value = StartGame('game-container');
     if (router.currentRoute.value.query) {
-       /*  let level = router.currentRoute.value.query.level as Levels;
-        let languaje = router.currentRoute.value.query.programingCode as Categories;
-        ArgumentsScene.getInstance().setParams(new GameEntity(languaje, level)) */
+        let level = router.currentRoute.value.query.levelCode as LevelCode;
+        let languaje = router.currentRoute.value.query.categoryCode as CategoryCode;
+        ArgumentsScene.getInstance().setParams(new GameEntity(languaje, level))
     }
    
     EventBus.on('current-scene-ready', (scene_instance: Phaser.Scene) => {
@@ -42,7 +43,6 @@ onUnmounted(() => {
         game.value.destroy(true);
         game.value = null;
     }
-
 });
 
 defineExpose({ scene, game });

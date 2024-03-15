@@ -7,28 +7,30 @@ export class CategoryRepositoryImpl implements CategoryRepository{
         QuizLocalManager.restart();
     }
    
-    getCategory(code: CategoryCode): Promise<Category | undefined> {
-        return Promise.resolve(CategoryManager.getByCode(code))
-    }
-   
     list(): Promise<Category[]> {
         return Promise.resolve(CategoryManager.getResult())
     }
     
     rating(code: CategoryCode): Promise<RatingCategory> {
-        let results = CategoryLevelManager.getResult(code)
+        const category = CategoryManager.findByCode(code);
+        const results = CategoryLevelManager.getResult(code)
         const averageScore = CategoryLevelManager.calAverageScore(results);
         const progress = CategoryLevelManager.calProgress(results);
-        let response = new RatingCategory(averageScore, progress, this.getLogo(code))
+        let response = new RatingCategory(
+            category?.name ?? '',
+            averageScore,
+            progress,
+            category?.logo ?? '',
+            this.getLogo(code),)
         return Promise.resolve(response)
     }
 
     private getLogo = (category: CategoryCode) =>  {
         const logos: Record<CategoryCode, string> = {
-            [CategoryCode.Python]: 'phyton-platform.png',
-            [CategoryCode.Sql]: 'sql-platform.png',
-            [CategoryCode.Java]: 'java-platform.png'
+            [CategoryCode.Python]: 'python_platform.png',
+            [CategoryCode.Sql]: 'sql_platform.png',
+            [CategoryCode.Java]: 'java_platform.png'
         };
-        return logos[category] ?? 'phyton-platform.png';
+        return logos[category] ?? 'python_platform.png';
     }
 }
