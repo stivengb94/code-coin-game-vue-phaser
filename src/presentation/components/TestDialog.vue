@@ -3,19 +3,29 @@
     <template v-slot:default="{ isActive }">
       <v-card title="Cuestionario">
         <v-card-text>
+          <h1 v-if="isFinalize">{{ point }}</h1>
           <v-container>
             <v-form ref="form">
               <div v-for="item in questions" :key="item.code">
                 <v-card class="mb-5">
                   <v-card-title>{{ item.name }}</v-card-title>
                   <v-card-text>
-                    <v-radio-group v-model="answers[item.code]" :mandatory="false">
-                      <v-radio v-for="option in item.options" :key="option" :label="option" :value="option"></v-radio>
+                    <v-radio-group v-model="answers[item.code]" :mandatory="false" :disabled="isFinalize">
+                      <v-radio v-for="option in item.options" :key="option" :label="option" :value="option">
+                        <template v-slot:label>
+                          <div v-if="answers[item.code] == option" :class="{
+                            'isCorrect': isFinalize && option == item.correctAnswer,
+                            'isIncorrect': isFinalize && option != item.correctAnswer
+                          }">{{ option }}</div>
+                          <div v-else>{{ option }}</div>
+                        </template>
+                      </v-radio>
                     </v-radio-group>
                   </v-card-text>
                 </v-card>
               </div>
-              <v-btn color="primary" @click="submitAnswers">Submit</v-btn>
+              <v-btn v-if="!isFinalize" color="primary" @click="submitAnswers">Finalizar</v-btn>
+              <v-btn v-else color="primary" @click="onClose">Cerrar</v-btn>
             </v-form>
           </v-container>
         </v-card-text>
@@ -26,7 +36,9 @@
 <script setup lang="ts">
 import type { Question } from "@domain/index";
 import { computed, onMounted, ref, defineProps, watch } from "vue";
+import { useRouter, useRoute } from 'vue-router';
 const emit = defineEmits(['on-cloce']);
+const router = useRouter();
 
 // Definir props
 const props = defineProps<{
@@ -35,8 +47,9 @@ const props = defineProps<{
 }>()
 
 const dialog = ref<Boolean>(false);
-const answers = ref({});
-
+const answers = ref<Record<string, string>>({});
+const isFinalize = ref<Boolean>(false);
+const point = ref<String>("")
 
 const onClose = async () => {
   emit("on-cloce");
@@ -48,7 +61,23 @@ watch(() => props.showDialog, (newValue, oldValue) => {
 })
 
 const submitAnswers = () => {
-  console.log(answers.value);
+  isFinalize.value = true;
+  const answersCorrect = [];
+  props.questions.forEach((v, inx) => {
+    console.log("respuestas", answers.value[v.code], v.correctAnswer);
+    if (answers.value[v.code] == v.correctAnswer) {
+      answersCorrect.push(1)
+    }
+  });
+  point.value = `${answersCorrect.length}/${props.questions.length}`;
 };
 
 </script>
+<style lang="scss" scoped>
+.isCorrect {
+  color: green;
+}
+.isIncorrect {
+  color: red;
+}
+</style>
