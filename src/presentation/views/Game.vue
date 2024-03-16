@@ -83,11 +83,16 @@ const onCloseTip = () => {
         scene.value.scene.resume(scene.value.key);
     }
 }
+
+const onCloseTest = () => {
+    dialogTest.value = false;
+    onBack();
+}
 </script>
 
 <template>
     <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip" />
-    <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTip" />
+    <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTest" />
     <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
     <div style="margin-left: 10px;">
         <h1>Estas Aprediendo</h1>
