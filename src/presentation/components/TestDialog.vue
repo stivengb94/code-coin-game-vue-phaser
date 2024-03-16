@@ -5,11 +5,11 @@
         <v-card-text>
           <v-container>
             <v-form ref="form">
-              <div v-for="item in questions" :key="item.questionCode">
+              <div v-for="item in questions" :key="item.code">
                 <v-card class="mb-5">
                   <v-card-title>{{ item.name }}</v-card-title>
                   <v-card-text>
-                    <v-radio-group v-model="answers[item.questionCode]" :mandatory="false">
+                    <v-radio-group v-model="answers[item.code]" :mandatory="false">
                       <v-radio v-for="option in item.options" :key="option" :label="option" :value="option"></v-radio>
                     </v-radio-group>
                   </v-card-text>
