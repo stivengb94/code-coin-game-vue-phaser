@@ -107,6 +107,9 @@ const restart = async ()  => {
     tr {
       cursor: pointer;
     }
+    tr:hover {
+      background-color: #bbb9b963;
+    }
 
     td {
       text-align: center;
