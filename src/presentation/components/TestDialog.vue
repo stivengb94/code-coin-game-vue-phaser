@@ -24,13 +24,14 @@
   </v-dialog>
 </template>
 <script setup lang="ts">
+import type { Question } from "@domain/index";
 import { computed, onMounted, ref, defineProps, watch } from "vue";
 const emit = defineEmits(['on-cloce']);
 
 // Definir props
 const props = defineProps<{
   showDialog: Boolean;
-  questions: Array<any>
+  questions: Array<Question>
 }>()
 
 const dialog = ref<Boolean>(false);
