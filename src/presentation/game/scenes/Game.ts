@@ -133,25 +133,26 @@ export class Game extends Scene {
         }
 
         // Detecta la superposición con las monedas
-        this.children.each((coin: any) => {
+        this.children.each((gameObject: any) => {
             // Verifica si el objeto es una moneda
             if (
-                coin.getData("isCoin") &&
-                this.physics.overlap(this.player, coin)
+                gameObject.getData("isCoin") &&
+                this.physics.overlap(this.player, gameObject)
             ) {
-                const data: CoinParams = coin.getData("isCoin")
+                const data: CoinParams = gameObject.getData("isCoin")
                 // Cuando el jugador recoge una moneda
-                coin.destroy(); // Elimina la moneda del juego
+                gameObject.destroy(); // Elimina la moneda del juego
                 // Incrementa la puntuación del jugador
                 this.scoreMgr.increment();
+                console.log("MONEY", gameObject)
                 EventBus.emit("scene-coin-capture", data);
             }
 
             if (
-                coin.getData("isMeta") &&
-                this.physics.overlap(this.player, coin)
+                gameObject.getData("isMeta") &&
+                this.physics.overlap(this.player, gameObject)
             ) {
-                coin.setData("isMeta", false) 
+                gameObject.setData("isMeta", false) 
                 EventBus.emit("scene-finished", true);
             }
         });
