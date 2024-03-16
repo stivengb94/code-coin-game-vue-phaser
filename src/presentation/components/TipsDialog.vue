@@ -1,16 +1,15 @@
 <template>
-  <v-dialog v-model="dialog" max-width="500">
+  <v-dialog v-model="dialog" max-width="500" persistent>
     <template v-slot:default="{ isActive }">
-      <v-card title="Dialog">
+      <v-card title="Nota">
         <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          {{ tip }}
         </v-card-text>
 
         <v-card-actions>
           <v-spacer></v-spacer>
 
-          <v-btn text="Close Dialog" @click="isActive.value = false"></v-btn>
+          <v-btn text="Close" @click="onClose"></v-btn>
         </v-card-actions>
       </v-card>
     </template>
@@ -23,13 +22,17 @@ const emit = defineEmits(['on-cloce']);
 // Definir props
 const props = defineProps<{
   showDialog: Boolean;
+  tip: string;
 }>()
 
-const dialog = ref<Boolean>();
+const dialog = ref<Boolean>(false);
 
-watch(() => dialog, (newValue, oldValue) => {
+
+const onClose = async () => {
   emit("on-cloce");
-})
+  dialog.value = false;
+}
+
 watch(() => props.showDialog, (newValue, oldValue) => {
   dialog.value = newValue;
 })

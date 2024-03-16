@@ -1,0 +1,27 @@
+{
+    "basic": [
+        {
+            "questionCode": "PTBASIC1",
+            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
+            "options": ["a) define","b) function", "c) def","d) func"],
+            "correctAnswer":"c) def",
+            "index": 1
+        },
+        {
+            "questionCode": "PTBASIC2",
+            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
+            "options": ["a) define","b) function", "c) def","d) func"],
+            "correctAnswer":"c) def",
+            "index": 2
+        }
+    ],
+    "medium": [
+        {
+            "questionCode": "PTMEDIUM1",
+            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
+            "options": ["a) define","b) function", "c) def","d) func"],
+            "correctAnswer":"c) def",
+            "index": 1
+        }
+    ]
+}
