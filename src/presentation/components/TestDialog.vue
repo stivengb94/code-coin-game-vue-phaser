@@ -1,13 +1,13 @@
 <template>
-  <v-dialog v-model="dialog" max-width="500" persistent>
+  <v-dialog v-model="dialog" max-width="1000" persistent>
     <template v-slot:default="{ isActive }">
-      <v-card title="Nota">
+      <v-card title="Cuestionario">
         <v-card-text>
           <v-container>
             <v-form ref="form">
               <div v-for="item in questions" :key="item.questionCode">
                 <v-card class="mb-5">
-                  <v-card-title>{{ item.question }}</v-card-title>
+                  <v-card-title>{{ item.name }}</v-card-title>
                   <v-card-text>
                     <v-radio-group v-model="answers[item.questionCode]" :mandatory="false">
                       <v-radio v-for="option in item.options" :key="option" :label="option" :value="option"></v-radio>

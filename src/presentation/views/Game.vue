@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import { onMounted, onUnmounted, ref, toRaw } from 'vue';
 import PhaserGame from '@presentation/game/PhaserGame.vue';
 import TipsDialog from '@presentation/components/TipsDialog.vue'
+import TestDialog from '@presentation/components/TestDialog.vue'
 import { useRouter, useRoute } from 'vue-router';
 import type { CategoryCode, Learning, LearningRepository, LevelCode, Question, QuizzRepository } from '@domain/index';
 import { AppModules, Ioc } from '@di/index';
@@ -19,6 +20,8 @@ const quizzRepository = Ioc.instance.di.resolve<QuizzRepository>(AppModules.Quiz
 //  References to the PhaserGame component (game and scene are exposed)
 const phaserRef = ref();
 const dialogTip = ref<Boolean>(false);
+const dialogTest = ref<Boolean>(false);
+const questionTest = ref<Array<any>>([]);
 const learningTip = ref<String>("");
 const learnings = ref<Learning[]>([]);
 const quizz = ref<Question[]>([]);
@@ -65,12 +68,16 @@ const onSuscriptions = async () => {
     });
 
     EventBus.on('scene-finished', (_: boolean) => {
-        alert(`Modificar aqui para mostrar ${quizz.value.length} preguntas`)
+        questionTest.value = quizz.value;
+        dialogTest.value = true;
+        if (scene.value && scene.value.scene) {
+            scene.value.scene.pause(scene.value.key);
+        }
     });
 }
 
 const onCloseTip = () => {
-    dialogTip.value = false; 
+    dialogTip.value = false;
     learningTip.value = '';
     if (scene.value && scene.value.scene) {
         scene.value.scene.resume(scene.value.key);
@@ -79,8 +86,8 @@ const onCloseTip = () => {
 </script>
 
 <template>
-    <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip">
-    </TipsDialog>
+    <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip" />
+    <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTip" />
     <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
     <div style="margin-left: 10px;">
         <h1>Estas Aprediendo</h1>
