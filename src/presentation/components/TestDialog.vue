@@ -34,7 +34,8 @@
   </v-dialog>
 </template>
 <script setup lang="ts">
-import type { Question } from "@domain/index";
+import { type Question, type QuizzRepository, type LevelCode, CategoryCode } from "@domain/index";
+import { AppModules, Ioc } from "@di/index";
 import { computed, onMounted, ref, defineProps, watch } from "vue";
 import { useRouter, useRoute } from 'vue-router';
 const emit = defineEmits(['on-cloce']);
@@ -43,8 +44,12 @@ const router = useRouter();
 // Definir props
 const props = defineProps<{
   showDialog: Boolean;
-  questions: Array<Question>
+  questions: Array<Question>;
+  levelCode: LevelCode;
+  categoryCode: CategoryCode
 }>()
+
+const quizzRepository = Ioc.instance.di.resolve<QuizzRepository>(AppModules.Quizz);
 
 const dialog = ref<Boolean>(false);
 const answers = ref<Record<string, string>>({});
@@ -70,6 +75,12 @@ const submitAnswers = () => {
     }
   });
   point.value = `${answersCorrect.length}/${props.questions.length}`;
+  quizzRepository.save({
+    categoryLevelCode: props.levelCode,
+    categoryCode: props.categoryCode,
+    totalQuestions: props.questions.length,
+    totalCorrectQuestions:answersCorrect.length
+  });
 };
 
 </script>

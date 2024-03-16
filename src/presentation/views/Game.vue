@@ -26,16 +26,18 @@ const learningTip = ref<String>("");
 const learnings = ref<Learning[]>([]);
 const quizz = ref<Question[]>([]);
 const scene = ref<Phaser.Scene>();
+const categoryCode = ref<CategoryCode>('java' as CategoryCode);
+const levelCode = ref<LevelCode>('basic' as LevelCode);
 // Event emitted from the PhaserGame component
 const currentScene = (_scene: Phaser.Scene) => { scene.value = _scene }
 
 onMounted(async () => {
     onSuscriptions()
     load()
-    const categoryCode = route.query?.categoryCode as CategoryCode;
-    const levelCode = route.query?.levelCode as LevelCode;
-    learnings.value = await learningRepository.listBy(categoryCode, levelCode);
-    quizz.value = await quizzRepository.getBy(categoryCode, levelCode);
+    categoryCode.value = route.query?.categoryCode as CategoryCode;
+    levelCode.value = route.query?.levelCode as LevelCode;
+    learnings.value = await learningRepository.listBy(categoryCode.value, levelCode.value);
+    quizz.value = await quizzRepository.getBy(categoryCode.value, levelCode.value);
 });
 
 const load = () => {
@@ -92,7 +94,7 @@ const onCloseTest = () => {
 
 <template>
     <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip" />
-    <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTest" />
+    <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTest" :category-code="categoryCode" :level-code="levelCode" />
     <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
     <div style="margin-left: 10px;">
         <h1>Estas Aprediendo</h1>
