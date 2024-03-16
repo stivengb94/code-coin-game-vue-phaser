@@ -13,7 +13,7 @@ const router = useRouter();
 const scene = ref();
 const game = ref();
 
-const emit = defineEmits(['current-active-scene']);
+const emit = defineEmits(['current-active-scene', 'scene-coin-capture']);
 
 onMounted(() => {
     game.value = StartGame('game-container');
@@ -29,6 +29,7 @@ onMounted(() => {
     });
 
     EventBus.on('scene-coin-capture', (params: CoinParams) => {
+        emit('scene-coin-capture', true);
         console.log("Moneda: ", params)
     });
 
