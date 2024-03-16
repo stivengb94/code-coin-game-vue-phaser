@@ -22,8 +22,9 @@ const dialogTip = ref<Boolean>(false);
 const learningTip = ref<String>("");
 const learnings = ref<Learning[]>([]);
 const quizz = ref<Question[]>([]);
+const scene = ref<Phaser.Scene>();
 // Event emitted from the PhaserGame component
-const currentScene = (scene: Phaser.Scene) => { }
+const currentScene = (_scene: Phaser.Scene) => { scene.value = _scene }
 
 onMounted(async () => {
     onSuscriptions()
@@ -57,6 +58,9 @@ const onSuscriptions = async () => {
         if (findLearning) {
             learningTip.value = findLearning.description;
             dialogTip.value = true;
+            if (scene.value && scene.value.scene) {
+                scene.value.scene.pause(scene.value.key);
+            }
         }
     });
 
@@ -64,10 +68,18 @@ const onSuscriptions = async () => {
         alert(`Modificar aqui para mostrar ${quizz.value.length} preguntas`)
     });
 }
+
+const onCloseTip = () => {
+    dialogTip.value = false; 
+    learningTip.value = '';
+    if (scene.value && scene.value.scene) {
+        scene.value.scene.resume(scene.value.key);
+    }
+}
 </script>
 
 <template>
-    <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="() => { dialogTip = false; learningTip = ''; }">
+    <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip">
     </TipsDialog>
     <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
     <div style="margin-left: 10px;">
