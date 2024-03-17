@@ -14,12 +14,12 @@ export class CoinManager {
 
     private init() {}
 
-    drawMany(repeat: number, stepX: number = 500): Phaser.Physics.Arcade.Group
+    drawMany(repeat: number, stepX: number = 400): Phaser.Physics.Arcade.Group
     {
         const coins = this.scene.physics.add.group({
             key: this.icon,
             repeat: repeat == 0 ? repeat : repeat - 1,
-            setXY: { x: 250, y: 0, stepX: stepX },
+            setXY: { x: 850, y: 0, stepX: stepX },
         });
         let index: number = 0
         coins.children.iterate( (child) => {

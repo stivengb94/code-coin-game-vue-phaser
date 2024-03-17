@@ -38,6 +38,10 @@ export class Preloader extends Scene
         this.load.image("sql", "others/sql_platform.png");
         this.load.image("java", "others/java_platform.png");
 
+        this.load.image("buttonLeft", "left.png");
+        this.load.image("buttonRight", "right.png");
+        this.load.image("buttonUp", "up.png");
+
 
         this.load.image("coin", "others/money.png");
         this.load.image("coin-python", "others/money-python.png");

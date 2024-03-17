@@ -99,11 +99,18 @@ const onCloseTest = () => {
 <template>
     <TipsDialog :show-dialog="dialogTip"  :tip="learningTip" :title="learningTitle" @on-cloce="onCloseTip" />
     <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTest" :category-code="categoryCode" :level-code="levelCode" />
-    <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
-    <div style="margin-left: 10px;">
-        <h1>Estas Aprediendo</h1>
-        <p>Nivel: {{ $route.query?.levelName }}</p>
-        <p>De: {{ $route.query?.categoryName }}</p>
-        <v-btn @click="onBack" color="indigo-darken-3" rounded="lg" block>Salir</v-btn>
-    </div>
+    
+    <v-row justify="start" no-gutters class="lounge__content__main_row">
+        <v-col cols="12" sm="12"  lg="8">
+            <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
+        </v-col>
+        <v-col cols="12" sm="12"  lg="4">
+            <div>
+                <h1>Estas Aprediendo</h1>
+                <p>Nivel: {{ $route.query?.levelName }}</p>
+                <p>De: {{ $route.query?.categoryName }}</p>
+                <v-btn @click="onBack" color="indigo-darken-3" rounded="lg" block>Salir</v-btn>
+            </div>
+        </v-col>
+    </v-row>
 </template>

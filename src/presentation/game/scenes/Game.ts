@@ -38,6 +38,15 @@ export class Game extends Scene {
     numberCoins = 10;
     params: GameEntity;
 
+    // Botones
+    buttonLeft: Phaser.GameObjects.Image;
+    buttonRight: Phaser.GameObjects.Image;
+    buttonUp: Phaser.GameObjects.Image;
+
+    // Estados de los botones
+    isButtonLeftPressed: boolean = false;
+    isButtonRightPressed: boolean = false;
+    isButtonUpPressed: boolean = false;
 
     constructor() {
         super("Game");
@@ -61,6 +70,8 @@ export class Game extends Scene {
         this.drawBackground();
         this.drawBush();
         this.player = this.playerMgr.draw();
+        this.player.x = this.cameras.main.width / 2; // Posición inicial del jugador centrada en el eje X
+
         this.score = this.scoreMgr.draw();
         this.drawPlatforms();
         this.drawCoins();
@@ -70,7 +81,50 @@ export class Game extends Scene {
             backgroundHeight: this.backgroundHeight,
             backgroundWidth: this.backgroundWidth,
         });
+
+
+        // Agregar botones
+        this.controlsConfig()
+       
         EventBus.emit("current-scene-ready", this);
+    }
+
+    controlsConfig() {
+        this.buttonLeft = this.add.image((this.cameras.main.width / 2) -100, this.cameras.main.height - 40, "buttonLeft").setInteractive();
+        this.buttonRight = this.add.image((this.cameras.main.width / 2) + 100, this.cameras.main.height - 40, "buttonRight").setInteractive();
+        this.buttonUp = this.add.image((this.cameras.main.width / 2), this.cameras.main.height - 40, "buttonUp").setInteractive();
+ 
+        // Configurar eventos de clic
+        this.buttonLeft.on('pointerdown', () => {
+             this.isButtonLeftPressed = true;
+            this.isButtonRightPressed = false;
+            this.isButtonUpPressed = false;
+        });
+
+        this.buttonLeft.on('pointerout', () => {
+            this.isButtonLeftPressed = false;
+        });
+
+        this.buttonRight.on('pointerdown', () => {
+            this.isButtonRightPressed = true;
+            this.isButtonLeftPressed = false;
+            this.isButtonUpPressed= false
+
+        });
+
+        this.buttonRight.on('pointerout', () => {
+            this.isButtonRightPressed = false;
+        });
+
+        this.buttonUp.on('pointerdown', () => {
+            this.isButtonUpPressed= true
+            this.isButtonRightPressed = false;
+            this.isButtonLeftPressed = false;
+        });
+
+        this.buttonUp.on('pointerout', () => {
+            this.isButtonUpPressed = false;
+        });
     }
 
     config() {
@@ -89,7 +143,7 @@ export class Game extends Scene {
 
     drawBush() {
         this.add.image(1055, 420, "bush").setScale(1.5);
-        this.add.image(455, 500, this.params.buildBush()).setScale(0.5);
+        this.add.image(755, 500, this.params.buildBush()).setScale(0.5);
     }
 
     drawCoins() {
@@ -97,7 +151,7 @@ export class Game extends Scene {
         this.physics.add.collider(coins, this.platforms);
     }
 
-    drawMeta = () => this.metaMgr.draw({ x: this.backgroundWidth - 100, collider: this.platforms});
+    drawMeta = () => this.metaMgr.draw({ x: this.backgroundWidth - 400, collider: this.platforms});
 
     drawPlatforms() {
         this.platforms = this.platformMgr.drawMany(
@@ -108,20 +162,23 @@ export class Game extends Scene {
     }
 
     update(time: number, delta: number): void {
+       this.updateButtonPositions()
         // Mueve al jugador según las teclas de flecha
-        if (this.cursors?.left.isDown) {
+        if (this.cursors?.left.isDown || this.isButtonLeftPressed) {
             this.player?.setVelocityX(-this.playerMgr.runSpeed);
-            this.player?.anims.play("left", true); // Activa la animación de caminar hacia la izquierda
-        } else if (this.cursors?.right.isDown) {
+            this.player?.anims.play("left", true);
+        } else if (this.cursors?.right.isDown || this.isButtonRightPressed) {
             this.player?.setVelocityX(this.playerMgr.runSpeed);
-            this.player?.anims.play("right", true); // Activa la animación de caminar hacia la derecha
+            this.player?.anims.play("right", true);
         } else {
             this.player?.setVelocityX(0);
             this.player?.anims?.play("turn");
         }
+    
 
         // Salto: verifica si el jugador está en el suelo y presiona la tecla de flecha hacia arriba
-        if (this.cursors?.up.isDown && this.player?.body?.touching.down) {
+        if ((this.cursors?.up.isDown && this.player?.body?.touching.down) ||
+            (this.isButtonUpPressed && this.player?.body?.touching.down)) {
             // Aplica una velocidad vertical hacia arriba
             this.player.setVelocityY(this.playerMgr.jumpSpeed);
         }
@@ -144,8 +201,7 @@ export class Game extends Scene {
                 gameObject.destroy(); // Elimina la moneda del juego
                 // Incrementa la puntuación del jugador
                 this.scoreMgr.increment();
-                console.log("MONEY", gameObject)
-                EventBus.emit("scene-coin-capture", data);
+               // EventBus.emit("scene-coin-capture", data);
             }
 
             if (
@@ -156,5 +212,14 @@ export class Game extends Scene {
                 EventBus.emit("scene-finished", true);
             }
         });
+    }
+
+    updateButtonPositions() {
+        // Ajustar la posición de los botones según el desplazamiento de la cámara
+        const cameraScrollX = this.cameras.main.scrollX;
+        this.buttonLeft.x = (this.cameras.main.width / 2) - 100 + cameraScrollX;
+        this.buttonRight.x = (this.cameras.main.width / 2) + 100 + cameraScrollX;
+        this.buttonUp.x = (this.cameras.main.width / 2) + cameraScrollX;
+
     }
 }
