@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div>
-      <h1>Bienveidos a CodeGame</h1>
+      <h1>Bienvenidos a CodeGame</h1>
       <table>
         <thead>
           <th></th>
@@ -18,19 +18,17 @@
           </tr>
         </tbody>
       </table>
-      <div class="fotter">
+      <div class="footer">
         <v-row justify="center">
           <v-col class="btn-reiniciar" cols="12" md="4" sm="6">
             <v-btn @click="restart" color="indigo-darken-3" rounded="lg" block>Reiniciar</v-btn>
           </v-col>
           <v-col class="avance" cols="12" md="8" sm="6">
-            <v-row justify="rigth">
-              <v-col class="label" cols="12" md="10" sm="10">Puntaje global</v-col>
-              <v-col class="label" cols="12" md="2" sm="2"><b>{{scoreGlobal}}%</b></v-col>
+            <v-row justify="right">
+              <v-col class="label" cols="12" md="10" sm="10">Puntaje global <b>{{scoreGlobal}}%</b></v-col>
             </v-row>
-            <v-row justify="rigth">
-              <v-col class="label" cols="12" md="10" sm="10">Avance global</v-col>
-              <v-col class="label" cols="12" md="2" sm="2"><b>{{progressGlobal}}%</b></v-col>
+            <v-row justify="right">
+              <v-col class="label" cols="12" md="10" sm="10">Avance global <b>{{progressGlobal}}%</b> </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -94,10 +92,6 @@ const restart = async ()  => {
   align-items: center;
   --fontSize: 5pt;
 
-  thead {
-    text-align: center;
-  }
-
   h1 {
     font-size: calc(var(--fontSize) + 20pt);
     text-align: center;
@@ -107,14 +101,7 @@ const restart = async ()  => {
     width: 100%;
     font-size: calc(var(--fontSize) + 10pt);
 
-    tr {
-      cursor: pointer;
-    }
-    tr:hover {
-      background-color: #bbb9b963;
-    }
-
-    td {
+    th, td {
       text-align: center;
       min-width: 300px;
 
@@ -126,9 +113,15 @@ const restart = async ()  => {
         font-size: calc(var(--fontSize) + 15pt);
       }
     }
+    tr:hover {
+      background-color: #bbb9b963;
+    }
+    tr {
+      cursor: pointer;
+    }
   }
 
-  .fotter {
+  .footer {
     .label {
       font-size: calc(var(--fontSize) + 10pt);
     }
@@ -147,6 +140,53 @@ const restart = async ()  => {
         .v-btn__content {
           font-size: calc(var(--fontSize) + 10pt);
         }
+      }
+    }
+  }
+}
+@media (max-width: 1220px) {
+  .home {
+    
+    table {
+      th, td {
+        min-width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 824px) {
+  .home {
+    
+    table {
+      th, td {
+        min-width: 140px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    flex-direction: column;
+
+    h1 {
+      font-size: calc(var(--fontSize) + 15pt);
+    }
+
+    table {
+      th, td {
+        min-width: auto;
+        img {
+          height: 50pt;
+        }
+      }
+    }
+
+    .footer {
+      .avance {
+        text-align: center;
+        margin-top: 20px;
       }
     }
   }
