@@ -30,7 +30,7 @@ export class Game extends Scene {
     cursors: Phaser.Types.Input.Keyboard.CursorKeys | undefined; // Cambio aquí
     halfScreenWidth: number = 1024;
     backgroundWidth = 5048; // Ancho del fondo
-    backgroundHeight = 568; // Altura del fondo
+    backgroundHeight = 500; // Altura del fondo
     backgroundScale = 0.5; // Escala del fondo para que cubra toda la pantalla
     numberOfPlatforms = 5; // Número de plataformas que deseas agregar
     logoTween: Phaser.Tweens.Tween | null;
@@ -118,8 +118,6 @@ export class Game extends Scene {
 
         this.buttonUp.on('pointerdown', () => {
             this.isButtonUpPressed= true
-            this.isButtonRightPressed = false;
-            this.isButtonLeftPressed = false;
         });
 
         this.buttonUp.on('pointerout', () => {
@@ -198,6 +196,8 @@ export class Game extends Scene {
                 gameObject.getData("isCoin") &&
                 this.physics.overlap(this.player, gameObject)
             ) {
+                this.isButtonRightPressed = false;
+                this.isButtonLeftPressed = false;
                 const data: CoinParams = gameObject.getData("isCoin")
                 // Cuando el jugador recoge una moneda
                 gameObject.destroy(); // Elimina la moneda del juego

@@ -1,8 +1,9 @@
 <template>
   <v-dialog v-model="dialog" max-width="500" persistent>
     <template v-slot:default="{ isActive }">
-      <v-card :title="title">
+      <v-card>
         <v-card-text>
+          <h3>{{ title }}</h3>
           {{ tip }}
         </v-card-text>
 

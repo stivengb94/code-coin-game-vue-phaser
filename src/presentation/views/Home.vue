@@ -52,10 +52,13 @@ onMounted(async () => {
   categories.value = await categoryRepository.list();
 });
 
-const scoreGlobal = computed(
-  () =>  (categories.value.reduce((accumulator, currentLevel) => {
+  const scoreGlobal = computed(
+  () => {
+   const result = (categories.value.reduce((accumulator, currentLevel) => {
     return accumulator + currentLevel.score;
-  }, 0)) / categories.value.length);
+  }, 0)) / categories.value.length
+  return parseFloat(result.toFixed(1))
+  });
 
 const progressGlobal = computed(
   () => {

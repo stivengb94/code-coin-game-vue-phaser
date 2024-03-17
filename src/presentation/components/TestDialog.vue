@@ -8,8 +8,8 @@
             <v-form ref="form">
               <div v-for="item in questions" :key="item.code">
                 <v-card class="mb-5">
-                  <v-card-title>{{ item.name }}</v-card-title>
                   <v-card-text>
+                    <h3>{{ item.name }}</h3>
                     <v-radio-group v-model="answers[item.code]" :mandatory="false" :disabled="isFinalize">
                       <v-radio v-for="option in item.options" :key="option" :label="option" :value="option">
                         <template v-slot:label>

@@ -8,14 +8,14 @@ import { Preloader } from './scenes/Preloader';
 const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
     width: 1024,
-    height: 568,
+    height: 500,
     parent: 'game-container',
     backgroundColor: '#028af8',
     physics: {
         default: 'arcade',
         arcade: {
             gravity: {y: 800, x:0},
-            debug: true, // Cambia a true para ver los contornos de colisión
+            debug: false, // Cambia a true para ver los contornos de colisión
         },
     },
     scene: [
