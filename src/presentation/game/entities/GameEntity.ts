@@ -16,10 +16,10 @@ export class GameEntity {
     }
 
     buildBush(): string {
-        const value: Record<string, string> = {
-            "java": "java",
-            "sql": "sql",
-            "python":"python"
+        const value: Record<CategoryCode, string> = {
+            [CategoryCode.Java]: "java",
+            [CategoryCode.Sql]: "sql",
+            [CategoryCode.Python]:"python"
         };
         return value[this.categoryCode] ?? 'python'
     }
