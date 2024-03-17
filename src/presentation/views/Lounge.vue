@@ -12,10 +12,10 @@
               <v-btn
               @click="onBack" color="indigo-darken-3"
                rounded="lg" block
-                prepend-icon="mdi-check-circle"
+                prepend-icon="mdi-arrow-left"
               >
                 <template v-slot:prepend>
-                  <v-icon color="success"></v-icon>
+                  <v-icon color="white"></v-icon>
                 </template>
                 Volver
               </v-btn>

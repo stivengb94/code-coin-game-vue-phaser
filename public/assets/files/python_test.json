@@ -2,26 +2,245 @@
     "basic": [
         {
             "questionCode": "PTBASIC1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en Python?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "question": "¿Qué función se utiliza para imprimir un mensaje en la pantalla en Python?",
+            "options": [
+                "a) print()",
+                "b) echo()",
+                "c) console.log",
+                "d) write"
+            ],
+            "correctAnswer": "a) print()",
             "index": 1
         },
         {
             "questionCode": "PTBASIC2",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en Python?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "question": "¿Cómo se crea una variable que almacena el número 10 en Python?",
+            "options": [
+                "a) int x = 10;",
+                "b) var x = 10",
+                "c) x = 10;",
+                "d) let x = 10;"
+            ],
+            "correctAnswer": "c) x = 10;",
             "index": 2
+        },
+        {
+            "questionCode": "PTBASIC3",
+            "question": "¿Cómo se inicia un comentario en Python?",
+            "options": [
+                "a) <!-- -->",
+                "b) //",
+                "c) /* */",
+                "d) # "
+            ],
+            "correctAnswer": "d) # ",
+            "index": 3
+        },
+        {
+            "questionCode": "PTBASIC4",
+            "question": "¿Qué tipo de dato se utiliza para almacenar texto en Python?",
+            "options": [
+                "a) text",
+                "b) string",
+                "c) str",
+                "d) char"
+            ],
+            "correctAnswer": "c) str",
+            "index": 4
+        },
+        {
+            "questionCode": "PTBASIC5",
+            "question": "¿Cómo se crea un bucle que imprima números del 1 al 5 en Python?",
+            "options": [
+                "a) for(i=1; i<=5; i++) {print(i);}",
+                "b) for i in range(1, 6): print(i)",
+                "c) while(i <= 5): print(i)",
+                "d) loop(i=1; i<=5; i++): print(i)"
+            ],
+            "correctAnswer": "b) for i in range(1, 6): print(i)",
+            "index": 5
+        },
+        {
+            "questionCode": "PTBASIC6",
+            "question": "¿Cómo se puede capturar la entrada del usuario en Python?",
+            "options": [
+                "a) getUserInput()",
+                "b) input()",
+                "c) readInput()",
+                "d) scanf()"
+            ],
+            "correctAnswer": "b) input()",
+            "index": 6
+        },
+        {
+            "questionCode": "PTBASIC7",
+            "question": "¿Qué operador se utiliza para verificar si dos valores son iguales en Python?",
+            "options": [
+                "a) =",
+                "b) ===",
+                "c) ==",
+                "d) func"
+            ],
+            "correctAnswer": "c) ==",
+            "index": 7
+        },
+        {
+            "questionCode": "PTBASIC8",
+            "question": "¿Qué sentencia se utiliza en Python para iterar sobre los elementos de una lista?",
+            "options": [
+                "a) select",
+                "b) iterate",
+                "c) for",
+                "d) loop"
+            ],
+            "correctAnswer": "c) for",
+            "index": 8
+        },
+        {
+            "questionCode": "PTBASIC9",
+            "question": "¿Cómo se define una función en Python que sume dos números?",
+            "options": [
+                "a) function suma(a, b): a + b",
+                "b) def suma(a, b): return a + b",
+                "c) suma = (a, b) => a + b",
+                "d) int suma(int a, int b) {return a + b;}"
+            ],
+            "correctAnswer": "b) def suma(a, b): return a + b",
+            "index": 9
+        },
+        {
+            "questionCode": "PTBASIC10",
+            "question": "¿Qué palabra clave se utiliza para crear una condición en Python?",
+            "options": [
+                "a) if",
+                "b) condition",
+                "c) when",
+                "d) check"
+            ],
+            "correctAnswer": "a) if",
+            "index": 10
         }
     ],
     "medium": [
         {
             "questionCode": "PTMEDIUM1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en Python?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "question": "¿Cómo se importa un módulo en Python?",
+            "options": [
+                "a import module as md) ",
+                "b) #import module",
+                "c) module.import()",
+                "d) import module "
+            ],
+            "correctAnswer": "d) #import module",
             "index": 1
+        },
+        {
+            "questionCode": "PTMEDIUM2",
+            "question": "¿Qué es una lista por comprensión en Python?",
+            "options": [
+                "a) Una forma de copiar listas",
+                "b) Una técnica para filtrar elementos de una lista",
+                "c) Una forma concisa de crear listas",
+                "d) Una librería para manipular listas"
+            ],
+            "correctAnswer": "c) Una forma concisa de crear listas",
+            "index": 2
+        },
+        {
+            "questionCode": "PTMEDIUM3",
+            "question": "¿Cómo se manejan las excepciones en Python?",
+            "options": [
+                "a) handle Exception as error",
+                "b) try: ... except Exception as error: ...",
+                "c) if error: ... else: ...",
+                "d) error.Exception()"
+            ],
+            "correctAnswer": "b) try: ... except Exception as error: ...",
+            "index": 3
+        },
+        {
+            "questionCode": "PTMEDIUM4",
+            "question": " ¿Qué método se usa para añadir un elemento al final de una lista en Python?",
+            "options": [
+                "a) .add()",
+                "b) .append()",
+                "c) .insert()",
+                "d) .push()"
+            ],
+            "correctAnswer": "b) .append()",
+            "index": 4
+        },
+        {
+            "questionCode": "PTMEDIUM5",
+            "question": "¿Cómo se puede iterar sobre un diccionario en Python y obtener tanto la clave como el valor?",
+            "options": [
+                "a) for key in dict:",
+                "b) for key, value in dict.items():",
+                "c) for key, value in dict():",
+                "d) for dict.key, dict.value in dict:"
+            ],
+            "correctAnswer": "b) for key, value in dict.items():",
+            "index": 5
+        },
+        {
+            "questionCode": "PTMEDIUM6",
+            "question": "¿Qué es un decorador en Python?",
+            "options": [
+                "a) Una variable que añade funcionalidades a las funciones",
+                "b) Un patrón de diseño que permite modificar una función o clase",
+                "c)Una función que embellece la salida de otras funciones",
+                "d) Un módulo que mejora el rendimiento de las funciones"
+            ],
+            "correctAnswer": "b) Un patrón de diseño que permite modificar una función o clase",
+            "index": 6
+        },
+        {
+            "questionCode": "PTMEDIUM7",
+            "question": "¿Cómo se crea un conjunto en Python y qué característica principal tiene?",
+            "options": [
+                "a) set = {} y es ordenado",
+                "b) set = set() y no permite duplicados",
+                "c) set = [] y es inmutable",
+                "d)  set = () y es mutable"
+            ],
+            "correctAnswer": "b) set = set() y no permite duplicados",
+            "index": 7
+        },
+        {
+            "questionCode": "PTMEDIUM8",
+            "question": "¿Cómo se define una clase en Python?",
+            "options": [
+                "a) class MyClass: ...",
+                "b) def MyClass: ...",
+                "c) create MyClass: ...",
+                "d) MyClass = class:"
+            ],
+            "correctAnswer": "a) class MyClass: ...",
+            "index": 8
+        },
+        {
+            "questionCode": "PTMEDIUM9",
+            "question": "¿Qué es la herencia en la programación orientada a objetos en Python?",
+            "options": [
+                "a) La capacidad de una función para usar métodos de otra función",
+                "b) La transferencia de propiedades de objetos a sus métodos",
+                "c) La capacidad de una clase para derivar o heredar propiedades de otra clase",
+                "d) La habilidad de cambiar propiedades de métodos en tiempo de ejecución"
+            ],
+            "correctAnswer": "c) La capacidad de una clase para derivar o heredar propiedades de otra clase",
+            "index": 9
+        },
+        {
+            "questionCode": "PTMEDIUM10",
+            "question": "¿Cómo se puede abrir y leer un archivo en Python?",
+            "options": [
+                "a) `file.open(\"filename.txt\")`",
+                "b) `with open(\"filename.txt\", \"r\") as file: data = file.read()`",
+                "c) ",
+                "d) "
+            ],
+            "correctAnswer": "b) `with open(\"filename.txt\", \"r\") as file: data = file.read()`",
+            "index": 10
         }
     ]
 }

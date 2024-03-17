@@ -1,27 +1,246 @@
 {
     "basic": [
         {
-            "questionCode": "PTBASIC1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en SQL?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "SQLBASIC1",
+            "question": "¿Cómo se seleccionan todas las columnas de una tabla en SQL?",
+            "options": [
+                "a) SELECT * FROM tabla;",
+                "b) GET * FROM tabla;",
+                "c) SELECT all FROM tabla;",
+                "d) READ * FROM tabla;"
+            ],
+            "correctAnswer": "a) SELECT * FROM tabla;",
             "index": 1
         },
         {
-            "questionCode": "PTBASIC2",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en SQL?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "SQLBASIC2",
+            "question": "¿Cómo se puede insertar un nuevo registro en una tabla SQL?",
+            "options": [
+                "a) INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);",
+                "b) ADD INTO tabla (columna1, columna2) VALUES (valor1, valor2);",
+                "c) INSERT NEW INTO tabla (columna1, columna2) (valor1, valor2);",
+                "d) CREATE INTO tabla (columna1, columna2) VALUES (valor1, valor2);"
+            ],
+            "correctAnswer": "a) INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);",
             "index": 2
+        },
+        {
+            "questionCode": "SQLBASIC3",
+            "question": "¿Cómo se actualiza un registro existente en una tabla SQL?",
+            "options": [
+                "a) UPDATE tabla SET columna = 'nuevoValor' WHERE condición;",
+                "b) MODIFY tabla SET columna = 'nuevoValor' WHERE condición;",
+                "c) CHANGE tabla columna = 'nuevoValor' WHERE condición;",
+                "d) UPDATE tabla MODIFY columna = 'nuevoValor' WHERE condición;"
+            ],
+            "correctAnswer": "a) UPDATE tabla SET columna = 'nuevoValor' WHERE condición;",
+            "index": 3
+        },
+        {
+            "questionCode": "SQLBASIC4",
+            "question": "¿Cómo se elimina un registro de una tabla en SQL?",
+            "options": [
+                "a) DELETE FROM tabla WHERE condición;",
+                "b) REMOVE FROM tabla WHERE condición;",
+                "c) DROP FROM tabla WHERE condición;",
+                "d) ERASE FROM tabla WHERE condición;"
+            ],
+            "correctAnswer": "a) DELETE FROM tabla WHERE condición;",
+            "index": 4
+        },
+        {
+            "questionCode": "SQLBASIC5",
+            "question": "¿Qué es una clave primaria en SQL?",
+            "options": [
+                "a) Una columna que identifica de manera única cada fila en una tabla.",
+                "b) Una función para ordenar los datos en la base de datos; x++)",
+                "c) while x < 5:",
+                "d) loop x in range(5):"
+            ],
+            "correctAnswer": "a) Una columna que identifica de manera única cada fila en una tabla.",
+            "index": 5
+        },
+        {
+            "questionCode": "SQLBASIC6",
+            "question": "¿Cómo se puede restringir los resultados de una consulta SQL usando una condición?",
+            "options": [
+                "a) SELECT * FROM tabla HAVING condición;",
+                "b) SELECT * FROM tabla WHERE condición;",
+                "c) GET * FROM tabla WITH condición;",
+                "d) READ * FROM tabla IF condición;"
+            ],
+            "correctAnswer": "b) SELECT * FROM tabla WHERE condición;",
+            "index": 6
+        },
+        {
+            "questionCode": "SQLBASIC7",
+            "question": "¿Qué es un JOIN en SQL y para qué se utiliza?",
+            "options": [
+                "a) Para duplicar datos en diferentes tablas.",
+                "b) Para combinar filas de dos o más tablas, basado en una columna relacionada entre ellas.",
+                "c) Para unir datos en la misma tabla.",
+                "d) Para crear una nueva tabla a partir de otras dos."
+            ],
+            "correctAnswer": "b) Para combinar filas de dos o más tablas, basado en una columna relacionada entre ellas.",
+            "index": 7
+        },
+        {
+            "questionCode": "SQLBASIC8",
+            "question": "¿Cómo se agrupan los resultados de una consulta SQL?",
+            "options": [
+                "a) GROUP BY columna;",
+                "b) ORDER BY columna;",
+                "c) SORT BY columna;",
+                "d) COLLECT BY columna;"
+            ],
+            "correctAnswer": "a) GROUP BY columna;",
+            "index": 8
+        },
+        {
+            "questionCode": "SQLBASIC9",
+            "question": "¿Qué función se utiliza para contar el número de registros que cumplen una condición en SQL?",
+            "options": [
+                "a) COUNT()",
+                "b) SUM()",
+                "c) TOTAL()",
+                "d) NUMBER()"
+            ],
+            "correctAnswer": "a) COUNT()",
+            "index": 9
+        },
+        {
+            "questionCode": "SQLBASIC10",
+            "question": "¿Cómo se crea una tabla en SQL con columnas específicas?",
+            "options": [
+                "a) CREATE TABLE tabla (columna1 tipo, columna2 tipo);",
+                "b) DEFINE TABLE tabla (columna1 tipo, columna2 tipo);",
+                "c) NEW TABLE tabla (columna1 tipo, columna2 tipo);",
+                "d) TABLE CREATE tabla (columna1 tipo, columna2 tipo);"
+            ],
+            "correctAnswer": "a) CREATE TABLE tabla (columna1 tipo, columna2 tipo);",
+            "index": 10
         }
     ],
     "medium": [
         {
-            "questionCode": "PTMEDIUM1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en SQL?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "SQLMEDIUM1",
+            "question": "¿Cómo se utiliza un INNER JOIN para combinar filas de dos o más tablas?",
+            "options": [
+                "a) JOIN table1 INNER table2 ON table1.column = table2.column;",
+                "b) SELECT * FROM table1 JOIN table2 ON table1.column = table2.column;",
+                "c) CONNECT table1 WITH table2 USING INNER JOIN ON table1.column = table2.column;",
+                "d) LINK table1 AND table2 BY INNER JOIN ON table1.column = table2.column;"
+            ],
+            "correctAnswer": "b) SELECT * FROM table1 JOIN table2 ON table1.column = table2.column;",
             "index": 1
+        },
+        {
+            "questionCode": "SQLMEDIUM2",
+            "question": "¿Qué es un alias en SQL y cómo se utiliza?",
+            "options": [
+                "a) Una forma de cambiar el nombre de una columna temporalmente en los resultados.",
+                "b) Un método para ocultar los nombres reales de las tablas en las consultas.",
+                "c) Una técnica para acelerar las consultas mediante la asignación de nombres cortos.",
+                "d) Una función que permite cambiar el nombre de las columnas de una tabla"
+            ],
+            "correctAnswer": "a) Una forma de cambiar el nombre de una columna temporalmente en los resultados.",
+            "index": 2
+        },
+        {
+            "questionCode": "SQLMEDIUM3",
+            "question": "¿Cómo se puede seleccionar registros únicos en una columna con SQL?",
+            "options": [
+                "a) SELECT UNIQUE(columna) FROM tabla;",
+                "b) SELECT DISTINCT columna FROM tabla;",
+                "c) SELECT column FROM tabla UNIQUE;",
+                "d) GET DISTINCT(columna) FROM tabla;"
+            ],
+            "correctAnswer": "b) SELECT DISTINCT columna FROM tabla;",
+            "index": 3
+        },
+        {
+            "questionCode": "SQLMEDIUM4",
+            "question": "¿Cómo se utiliza la cláusula HAVING en SQL?",
+            "options": [
+                "a) Para especificar una condición de búsqueda para un grupo o un agregado.",
+                "b) Para definir una condición antes de que se agrupen los datos.",
+                "c) Como sustituto de WHERE cuando no se especifican condiciones.",
+                "d)  Para filtrar registros después de que se hayan ordenado."
+            ],
+            "correctAnswer": "a) Para especificar una condición de búsqueda para un grupo o un agregado.",
+            "index": 4
+        },
+        {
+            "questionCode": "SQLMEDIUM5",
+            "question": "¿Qué es una subconsulta en SQL y cómo se utiliza?",
+            "options": [
+                "a) Una consulta dentro de otra consulta que proporciona datos a la consulta principal.",
+                "b) Una función especial que calcula subtotales.",
+                "c) Un método para dividir consultas largas en partes más pequeñas.",
+                "d) Una técnica para ejecutar consultas secuenciales."
+            ],
+            "correctAnswer": "a) Una consulta dentro de otra consulta que proporciona datos a la consulta principal.",
+            "index": 5
+        },
+        {
+            "questionCode": "SQLMEDIUM6",
+            "question": "¿Cómo se manejan las transacciones en SQL?",
+            "options": [
+                "a) USING TRANSACTION;",
+                "b) START TRANSACTION; COMMIT; ROLLBACK;",
+                "c) BEGIN; END;",
+                "d) TRANSACTION START; TRANSACTION END;"
+            ],
+            "correctAnswer": "b) START TRANSACTION; COMMIT; ROLLBACK;",
+            "index": 6
+        },
+        {
+            "questionCode": "SQLMEDIUM7",
+            "question": "¿Qué sentencia SQL se utiliza para eliminar registros duplicados de un resultado de consulta?",
+            "options": [
+                "a) REMOVE DUPLICATES",
+                "b) DELETE DUPLICATES",
+                "c) SELECT DISTINCT",
+                "d) UNIQUE"
+            ],
+            "correctAnswer": "c) SELECT DISTINCT",
+            "index": 7
+        },
+        {
+            "questionCode": "SQLMEDIUM8",
+            "question": "¿Cómo se puede modificar el nombre de una columna o tabla en SQL?",
+            "options": [
+                "a) Funciones que filtran filas, como WHERE, HAVING, LIMIT.",
+                "b) Funciones que crean nuevas tablas a partir de las existentes, como JOIN, UNION, INTERSECT.",
+                "c) Funciones que modifican los valores de las columnas, como SET, UPDATE, MODIFY.",
+                "d) Funciones que operan en un conjunto de valores y devuelven un único valor, como COUNT, SUM, AVG, MAX, MIN."
+            ],
+            "correctAnswer": "d) Funciones que operan en un conjunto de valores y devuelven un único valor, como COUNT, SUM, AVG, MAX, MIN.",
+            "index": 8
+        },
+        {
+            "questionCode": "SQLMEDIUM9",
+            "question": "¿Qué es un índice en SQL y para qué se utiliza?",
+            "options": [
+                "a) Una restricción que asegura la unicidad de los datos en una tabla.",
+                "b) Un método para aumentar la velocidad de las operaciones de inserción en la base de datos.",
+                "c) Una herramienta para acelerar la recuperación o búsqueda de filas en la tabla basándose en las columnas que son más frecuentemente accedidas.",
+                "d) Un tipo de tabla especializada que organiza las relaciones entre tablas."
+            ],
+            "correctAnswer": "c) Una herramienta para acelerar la recuperación o búsqueda de filas en la tabla basándose en las columnas que son más frecuentemente accedidas.",
+            "index": 9
+        },
+        {
+            "questionCode": "SQLMEDIUM10",
+            "question": "¿Cómo se utilizan las cláusulas UNION y UNION ALL en SQL?",
+            "options": [
+                "a) UNION combina los resultados de dos consultas y elimina filas duplicadas. UNION ALL combina los resultados de dos consultas incluyendo todas las filas duplicadas.",
+                "b) UNION ALL combina las columnas de dos consultas. UNION combina las filas de dos consultas.",
+                "c) UNION se utiliza para insertar datos, mientras que UNION ALL se utiliza para actualizar datos.",
+                "d) No existe diferencia significativa; UNION y UNION ALL hacen lo mismo."
+            ],
+            "correctAnswer": "a) UNION combina los resultados de dos consultas y elimina filas duplicadas. UNION ALL combina los resultados de dos consultas incluyendo todas las filas duplicadas.",
+            "index": 10
         }
     ]
 }

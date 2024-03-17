@@ -60,9 +60,12 @@ const scoreGlobal = computed(
   }, 0)) / categories.value.length);
 
 const progressGlobal = computed(
-  () =>  (categories.value.reduce((accumulator, currentLevel) => {
+  () => {
+   const result =  (categories.value.reduce((accumulator, currentLevel) => {
     return accumulator + currentLevel.progress;
-  }, 0)) / categories.value.length);
+   }, 0)) / categories.value.length
+  return parseFloat(result.toFixed(1))
+  });
 
 const navigateLevel = async (category: Category ) => {
   router.push({

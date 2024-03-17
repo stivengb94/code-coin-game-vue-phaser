@@ -23,6 +23,8 @@ const dialogTip = ref<Boolean>(false);
 const dialogTest = ref<Boolean>(false);
 const questionTest = ref<Array<Question>>([]);
 const learningTip = ref<String>("");
+const learningTitle = ref<String>("");
+
 const learnings = ref<Learning[]>([]);
 const quizz = ref<Question[]>([]);
 const scene = ref<Phaser.Scene>();
@@ -62,9 +64,10 @@ const onSuscriptions = async () => {
         const findLearning = learnings.value.find(a => a.index == params.index + 1)
         if (findLearning) {
             learningTip.value = findLearning.description;
+            learningTitle.value = findLearning.title;
             dialogTip.value = true;
             if (scene.value && scene.value.scene) {
-                scene.value.scene.pause(scene.value.key);
+                scene.value.scene.pause(scene.value.scene.key);
             }
         }
     });
@@ -73,7 +76,7 @@ const onSuscriptions = async () => {
         questionTest.value = quizz.value;
         dialogTest.value = true;
         if (scene.value && scene.value.scene) {
-            scene.value.scene.pause(scene.value.key);
+            scene.value.scene.pause(scene.value.scene.key);
         }
     });
 }
@@ -81,8 +84,9 @@ const onSuscriptions = async () => {
 const onCloseTip = () => {
     dialogTip.value = false;
     learningTip.value = '';
+    learningTitle.value = '';
     if (scene.value && scene.value.scene) {
-        scene.value.scene.resume(scene.value.key);
+        scene.value.scene.resume(scene.value.scene.key);
     }
 }
 
@@ -93,7 +97,7 @@ const onCloseTest = () => {
 </script>
 
 <template>
-    <TipsDialog :show-dialog="dialogTip" :tip="learningTip" @on-cloce="onCloseTip" />
+    <TipsDialog :show-dialog="dialogTip"  :tip="learningTip" :title="learningTitle" @on-cloce="onCloseTip" />
     <TestDialog :show-dialog="dialogTest" :questions="questionTest" @on-cloce="onCloseTest" :category-code="categoryCode" :level-code="levelCode" />
     <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
     <div style="margin-left: 10px;">

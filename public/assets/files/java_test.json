@@ -1,27 +1,246 @@
 {
     "basic": [
         {
-            "questionCode": "PTBASIC1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "JVBASIC1",
+            "question": "¿Cuál es el propósito de la palabra clave static en Java?",
+            "options": [
+                "a) Crear constantes.",
+                "b) Permitir el acceso a métodos sin crear una instancia de la clase.",
+                "c) Marcar una variable para que no pueda cambiar.",
+                "d)  Inicializar variables."
+            ],
+            "correctAnswer": "b) Permitir el acceso a métodos sin crear una instancia de la clase.",
             "index": 1
         },
         {
-            "questionCode": "PTBASIC2",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "JVBASIC2",
+            "question": "¿Qué es una instancia de clase en Java?",
+            "options": [
+                "a)  Un tipo de variable.",
+                "b) Un método estático.",
+                "c) Un objeto creado a partir de una clase.",
+                "d)  Una función dentro de una clase."
+            ],
+            "correctAnswer": "c) Un objeto creado a partir de una clase.",
             "index": 2
+        },
+        {
+            "questionCode": "JVBASIC3",
+            "question": "¿Para qué se utiliza el método main en Java?",
+            "options": [
+                "a)  Para definir constantes.",
+                "b) Como el punto de entrada de un programa.",
+                "c)  Para inicializar objetos.",
+                "d) Para declarar variables."
+            ],
+            "correctAnswer": "b) Como el punto de entrada de un programa.",
+            "index": 3
+        },
+        {
+            "questionCode": "JVBASIC4",
+            "question": "¿Qué significan las siglas API en el contexto de Java?",
+            "options": [
+                "a) Advanced Programming Input.",
+                "b) Application Programming Interface.",
+                "c) Array Programming Interface.",
+                "d) Application Performance Indicator."
+            ],
+            "correctAnswer": "b) Application Programming Interface.",
+            "index": 4
+        },
+        {
+            "questionCode": "JVBASIC5",
+            "question": "¿Cómo se declara una variable de tipo entero en Java?",
+            "options": [
+                "a)  float num = 10;",
+                "b) int num = 10;",
+                "c) double num = 10;",
+                "d) String num = 10;"
+            ],
+            "correctAnswer": "b) int num = 10;",
+            "index": 5
+        },
+        {
+            "questionCode": "JVBASIC6",
+            "question": "¿Cuál de los siguientes es un bucle en Java?",
+            "options": [
+                "a)  if",
+                "b)  case",
+                "c) ) switch",
+                "d) for"
+            ],
+            "correctAnswer": "d) for",
+            "index": 6
+        },
+        {
+            "questionCode": "JVBASIC7",
+            "question": "¿Qué es la sobrecarga de métodos en Java?",
+            "options": [
+                "a) Cambiar el valor de retorno de un método.",
+                "b) Cambiar el nombre de un método.",
+                "c) Crear métodos con el mismo nombre pero diferentes parámetros.",
+                "d) Eliminar un método de una clase."
+            ],
+            "correctAnswer": "c) Crear métodos con el mismo nombre pero diferentes parámetros.",
+            "index": 7
+        },
+        {
+            "questionCode": "JVBASIC8",
+            "question": "¿Qué operador se utiliza para comparar dos valores en Java?",
+            "options": [
+                "a) =",
+                "b) ==",
+                "c) <=",
+                "d) !="
+            ],
+            "correctAnswer": "b) ==",
+            "index": 8
+        },
+        {
+            "questionCode": "JVBASIC9",
+            "question": "¿Cuál es la palabra clave utilizada para heredar de una clase en Java?",
+            "options": [
+                "a) super",
+                "b)this",
+                "c) class",
+                "d) extends"
+            ],
+            "correctAnswer": "d) extends",
+            "index": 9
+        },
+        {
+            "questionCode": "JVBASIC10",
+            "question": "¿Qué estructura de datos se utiliza para almacenar elementos en un orden específico en Java?",
+            "options": [
+                "a) Array",
+                "b) LinkedList",
+                "c) HashMap",
+                "d) Stack"
+            ],
+            "correctAnswer": "a) Array",
+            "index": 10
         }
     ],
     "medium": [
         {
-            "questionCode": "PTMEDIUM1",
-            "question": "¿Cuál de las siguientes palabras clave se utiliza para definir una función en JAVA?",
-            "options": ["a) define","b) function", "c) def","d) func"],
-            "correctAnswer":"c) def",
+            "questionCode": "JVMEDIUM1",
+            "question": "¿Qué característica de Java permite la ejecución de un programa en diferentes sistemas operativos sin modificaciones?",
+            "options": [
+                "a)  Polimorfismo.",
+                "b) Herencia",
+                "c) Encapsulación.",
+                "d) Portabilidad."
+            ],
+            "correctAnswer": "d) Portabilidad.",
             "index": 1
+        },
+        {
+            "questionCode": "JVMEDIUM2",
+            "question": "¿Qué principio de la programación orientada a objetos se utiliza para ocultar los detalles internos de cómo se implementa una clase?",
+            "options": [
+                "a)Abstracción. ",
+                "b)  Encapsulación.",
+                "c) Herencia.",
+                "d) Polimorfismo."
+            ],
+            "correctAnswer": "b) Encapsulación.",
+            "index": 2
+        },
+        {
+            "questionCode": "JVMEDIUM3",
+            "question": "¿Qué es una excepción en Java?",
+            "options": [
+                "a)  Un tipo de variable.",
+                "b) Un error de sintaxis en el código.",
+                "c) Un problema que ocurre durante la ejecución del programa.",
+                "d) Una condición de bucle.."
+            ],
+            "correctAnswer": "c) Un problema que ocurre durante la ejecución del programa.",
+            "index": 3
+        },
+        {
+            "questionCode": "JVMEDIUM4",
+            "question": "¿Qué es un constructor en Java?",
+            "options": [
+                "a)  Un método que inicializa una variable estática.",
+                "b) Un bloque de código que se ejecuta siempre que se crea un objeto.",
+                "c) Una clase especial que hereda de otra clase.",
+                "d)  Un tipo de variable."
+            ],
+            "correctAnswer": "b) Un bloque de código que se ejecuta siempre que se crea un objeto.",
+            "index": 4
+        },
+        {
+            "questionCode": "JVMEDIUM5",
+            "question": "¿Cómo se puede mejorar el rendimiento de un programa Java que utiliza múltiples hilos?",
+            "options": [
+                "a) Usando más ciclos for.",
+                "b)Reduciendo el uso de sincronización.",
+                "c) Incrementando la prioridad de todos los hilos.",
+                "d) Dividiendo el programa en más hilos."
+            ],
+            "correctAnswer": "b)Reduciendo el uso de sincronización.",
+            "index": 5
+        },
+        {
+            "questionCode": "JVMEDIUM6",
+            "question": "¿Qué característica de Java asegura que los recursos se liberan automáticamente después de su uso?",
+            "options": [
+                "a) Recolección de basura.",
+                "b)  Gestión manual de memoria.",
+                "c)Auto-cerrable. ",
+                "d) Finalización."
+            ],
+            "correctAnswer": "a) Recolección de basura.",
+            "index": 6
+        },
+        {
+            "questionCode": "JVMEDIUM7",
+            "question": "¿Qué es la serialización en Java?",
+            "options": [
+                "a) Guardar un objeto en una base de datos.",
+                "b) Copiar un objeto en otro.",
+                "c) Convertir un objeto en un array de bytes.",
+                "d) Comprimir un objeto para ahorrar espacio."
+            ],
+            "correctAnswer": "c) Convertir un objeto en un array de bytes.",
+            "index": 7
+        },
+        {
+            "questionCode": "JVMEDIUM8",
+            "question": "¿Cuál es la ventaja principal del polimorfismo en Java?",
+            "options": [
+                "a) Mejora la seguridad del código.",
+                "b) Reduce el uso de la memoria.",
+                "c) Permite que un objeto sea referenciado por referencias de más de un tipo.",
+                "d) Acelera el tiempo de ejecución del programa."
+            ],
+            "correctAnswer": "c) Permite que un objeto sea referenciado por referencias de más de un tipo.",
+            "index": 8
+        },
+        {
+            "questionCode": "JVMEDIUM9",
+            "question": "¿Qué es un paquete en Java y para qué se utiliza?",
+            "options": [
+                "a) Una colección de datos.",
+                "b) Un contenedor de clases e interfaces relacionadas.",
+                "c) Una herramienta de desarrollo de software.",
+                "d) Un tipo de variable"
+            ],
+            "correctAnswer": "b) Un contenedor de clases e interfaces relacionadas.",
+            "index": 9
+        },
+        {
+            "questionCode": "JVMEDIUM10",
+            "question": "¿Qué asegura el principio de encapsulación en Java?",
+            "options": [
+                "a) Que un objeto no puede cambiar el estado interno de otro objeto directamente.",
+                "b) Que todos los métodos deben ser públicos.",
+                "c)  Que las clases pueden ser usadas sin herencia.",
+                "d) Que el programa se ejecutará sin errores."
+            ],
+            "correctAnswer": "a) Que un objeto no puede cambiar el estado interno de otro objeto directamente.",
+            "index": 10
         }
     ]
 }

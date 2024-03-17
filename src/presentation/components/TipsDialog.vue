@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" max-width="500" persistent>
     <template v-slot:default="{ isActive }">
-      <v-card title="Nota">
+      <v-card :title="title">
         <v-card-text>
           {{ tip }}
         </v-card-text>
@@ -9,7 +9,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
 
-          <v-btn text="Close" @click="onClose"></v-btn>
+          <v-btn text="Cerrar" @click="onClose"></v-btn>
         </v-card-actions>
       </v-card>
     </template>
@@ -23,6 +23,7 @@ const emit = defineEmits(['on-cloce']);
 const props = defineProps<{
   showDialog: Boolean;
   tip: string;
+  title: string;
 }>()
 
 const dialog = ref<Boolean>(false);

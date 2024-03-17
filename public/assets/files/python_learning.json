@@ -1,62 +1,106 @@
 {
     "basic": [
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Función Print",
+            "description": "La función print() en Python. se utiliza para enviar texto y otros datos a la salida estándar que normalmente es la consola o terminal. Esta función es increíblemente útil para la depuración de código, mostrar resultados de operaciones o simplemente comunicar lo que hace tu programa a los usuarios.¿Por Qué Es Importante? Comprender cómo y cuándo usar print() te permite hacer que tus programas sean interactivos y más amigables para el usuario. Además, es una herramienta esencial para la depuración, permitiéndote ver qué valores tienen tus variables en diferentes puntos de la ejecución de tu programa. En Python, la función print() se utiliza para enviar datos a la salida estándar (por lo general, la pantalla). Esto hace que sea una herramienta esencial para la depuración y para mostrar mensajes al usuario. ",
             "index": 1
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Crear una variable",
+            "description": "En Python, la creación y asignación de valores a una variable se pueden hacer de manera simple y directa. A diferencia de otros lenguajes de programación que requieren especificar el tipo de dato al declarar una variable, Python utiliza la asignación dinámica, lo que significa que el tipo de la variable se determina automáticamente al asignarle un valor.",
             "index": 2
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Indicar un comentario",
+            "description": "Los comentarios son líneas en tu código que Python ignora al ejecutar programas. Se utilizan para dejar notas explicativas en el código, lo cual es fundamental para documentar la lógica de tu programa o para hacer notas temporales o recordatorios para futuras revisiones. ara almacenar un número en una variable en Python, simplemente asignas el valor a un nombre de variable:",
             "index": 3
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Dato para almacenar texto",
+            "description": "En Python, el tipo de dato utilizado para almacenar texto es str, abreviatura de string. Piensa en str como una cadena de caracteres, donde puedes formar palabras, oraciones o incluso párrafos enteros, al igual que usarías hilos de diferentes colores para tejer un tapiz con mensajes o imágenes.",
             "index": 4
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Bucle para crear números del 1 al 5",
+            "description": "Para imprimir números del 1 al 5_ puedes usar un bucle for junto con la función range(). La función range() genera una secuencia de números, que el bucle for recorrerá uno por uno, ejecutando el bloque de código para cada número.",
             "index": 5
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Como capturar la entrada de un usuario",
+            "description": "La función input() captura lo que el usuario escribe como una cadena de texto (str). Puedes asignar esta entrada a una variable para usarla dentro de tu programa. Además, input() puede recibir como argumento una cadena que se mostrará al usuario, sirviendo como indicación o pregunta",
             "index": 6
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Operador para verificar si dos valores son iguales",
+            "description": "En Python, el operador == se utiliza para verificar si dos valores son iguales. Funciona como comparar dos piezas de un rompecabezas para ver si encajan perfectamente en la misma forma y tamaño.",
             "index": 7
+        },
+        {
+            "title": "Sentencia For",
+            "description": "En Python, la sentencia for se utiliza para iterar sobre los elementos de una lista, permitiéndote ejecutar un bloque de código para cada elemento de la lista. Esto es como recorrer cada página de un libro, una por una, para leer su contenido.",
+            "index": 8
+        },
+        {
+            "title": "Función que sume dos números",
+            "description": "Para definir una función en Python que sume dos números, es como crear una receta que detalle cómo combinar dos ingredientes para obtener un nuevo plato. Usas la palabra clave def seguida del nombre de la función, paréntesis con nombres de parámetros, y luego escribes las instrucciones para sumar esos números. Esta función es tu herramienta personalizada para sumar rápidamente dos números cada vez que lo necesites, sin tener que repetir los pasos básicos de la suma.",
+            "index": 9
+        },
+        {
+            "title": "Palabra para crear una condición en  Python",
+            "description": " if En Python, la palabra clave if te permite examinar el estado de un programa y tomar decisiones basadas en ese estado.Usar if te da el poder de ejecutar un bloque de código solo si una condición específica es verdadera.",
+            "index": 10
         }
     ],
     "medium": [
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "importar un modulo en python",
+            "description": "Para importar un módulo en Python, se usa import seguido del nombre del módulo. Por ejemplo, import math te permite acceder a las funciones matemáticas del módulo math. Es como tener acceso a una caja de herramientas especializada para tu proyecto.",
             "index": 1
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Lista por comprensión",
+            "description": "Una lista por comprensión en Python es una forma concisa de crear listas. Funciona casi como una receta mágica donde describes lo que quieres y cómo transformarlo, todo en una sola línea. Por ejemplo, [x*2 for x in range(5)] crea una lista con los números del 0 al 4, cada uno multiplicado por 2. Es como decir: 'Quiero una lista de números, cada uno duplicado, partiendo de esta secuencia'.",
             "index": 2
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Excepciones en python",
+            "description": "En Python, las excepciones se manejan con bloques try y catch (en Python, catch se llama except). Primero intentas ejecutar el código que podría fallar dentro del bloque try. Si ocurre un error, Python lo captura y ejecuta el código dentro del bloque except. Es como intentar atrapar una pelota sabiendo que puede resbalarse; si se resbala, tienes un plan para recuperarla.",
             "index": 3
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Método append",
+            "description": "Para añadir un elemento al final de una lista en Python, se utiliza el método .append(). Funciona como añadir un nuevo juguete a tu caja de juguetes; simplemente lo pones al final de todos los demás. Por ejemplo, si tienes lista = [1, 2, 3] y quieres añadir el número 4, usarías lista.append(4).",
             "index": 4
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Iterar sobre un diccionario",
+            "description": "Para iterar sobre un diccionario en Python y obtener tanto la clave como el valor, se utiliza el método .items(). Esto es como abrir cada cajón de un archivador para revisar tanto la etiqueta del cajón (clave) como los documentos dentro (valor). ",
             "index": 5
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Decorador en python",
+            "description": "Un decorador en Python es una forma de modificar o mejorar las funciones o métodos sin cambiar su código fuente. Es como poner una capa extra de pintura o decoración en un objeto ya existente para cambiar su apariencia o funcionalidad. En términos de programación, permite agregar funcionalidades a una función antes y después de que se ejecute, sin modificarla directamente. Por ejemplo, puedes usar un decorador para registrar mensajes antes de que una función comience y después de que termine, ayudando en la depuración o en el control de acceso.",
             "index": 6
         },
         {
-            "description": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
+            "title": "Crear un conjunto en python",
+            "description": "Para crear un conjunto en Python, se utiliza {} con elementos dentro o el constructor set(). Un conjunto es similar a una bolsa que no permite duplicados; si intentas agregar el mismo elemento más de una vez, el conjunto lo ignora, manteniendo solo una instancia de cada elemento. Por ejemplo, mi_conjunto = {1, 2, 3} o mi_conjunto = set([1, 2, 3]) crea un conjunto con los elementos 1, 2, y 3. La característica principal de un conjunto es que todos sus elementos son únicos.",
             "index": 7
+        },
+        {
+            "title": "Definir una clase en python",
+            "description": "Para definir una clase en Python, comienzas con la palabra class seguida del nombre de la clase y dos puntos. Piénsalo como dibujar el esquema de un robot, describiendo qué partes tiene y qué puede hacer. Una clase es la plantilla para crear objetos (instancias), cada uno con características (atributos) y acciones (métodos) propias basadas en esa plantilla.",
+            "index": 8
+        },
+        {
+            "title": "Herencia en POO",
+            "description": "La herencia en la programación orientada a objetos, como en Python, es como recibir un conjunto de habilidades o propiedades de tus padres. Permite que una nueva clase (hija) adopte atributos y métodos de una clase existente (padre), facilitando la reutilización de código y la creación de relaciones entre clases. Esto significa que puedes crear clases más específicas sin tener que reescribir todo desde cero.",
+            "index": 9
+        },
+        {
+            "title": "Abrir y leer un archivo en python",
+            "description": "Para abrir y leer un archivo en Python, imagina que estás abriendo un libro para leer su contenido. Utilizas la función open(), especificando el nombre del archivo y el modo ('r' para lectura). Luego, puedes leer el archivo completo con .read() o línea por línea con un bucle. Es como pasar las páginas del libro una por una o leerlo todo de una vez.",
+            "index": 10
         }
     ]
 }

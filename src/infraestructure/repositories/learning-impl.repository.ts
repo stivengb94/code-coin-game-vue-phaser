@@ -7,7 +7,7 @@ export class LearningRepositoryImpl implements LearningRepository{
             [LevelCode.basic]: learnigs.basic,
             [LevelCode.medium]: learnigs.medium
         };
-        const result = (mapValue[codeLevel] ?? []).map(item => new Learning(item.description, item.index))
+        const result = (mapValue[codeLevel] ?? []).map(item => new Learning(item.title, item.description, item.index))
         return result
     }
 
@@ -31,6 +31,7 @@ export interface LearningDto{
 }
 
 export interface LearningItem{
+    title: string;
     description: string;
     index: number;
 }

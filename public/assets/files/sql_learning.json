@@ -1,62 +1,106 @@
 {
-    "basic": [
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 1
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 2
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 3
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 4
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 5
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 6
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 7
-        }
-    ],
-    "medium": [
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 1
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 2
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 3
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 4
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 5
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 6
-        },
-        {
-            "description": "Sql es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 7
-        }
-    ]
+  "basic": [
+    {
+      "title": "Seleccionar todas las columnas en una tabla SQL",
+      "description": "Para seleccionar todas las columnas de una tabla en SQL, es como pedir una porción de cada plato en un buffet. Utilizas la sentencia SELECT * FROM nombre_tabla;, donde el asterisco * representa todas las columnas. Esto te permite ver todo lo que ofrece la tabla, como si echaras un vistazo a cada plato disponible en el buffet.",
+      "index": 1
+    },
+    {
+      "title": "Insertar un nuevo registro en una tabla SQL",
+      "description": "Insertar un nuevo registro en una tabla SQL es como añadir una nueva fila en tu cuaderno de notas. Utilizas la sentencia INSERT INTO nombre_tabla (columna1, columna2, ...) VALUES (valor1, valor2, ...);. Aquí especificas en qué columna quieres añadir cada dato, como si decidieras en qué parte de tu nota va cada pedazo de información. Es una forma organizada de agregar nuevos datos a tu tabla",
+      "index": 2
+    },
+    {
+      "title": "Actualizar un registro existe en una tabla SQL",
+      "description": "Actualizar un registro existente en una tabla SQL es como corregir una entrada en tu diario. Usas la sentencia UPDATE nombre_tabla SET columna1 = valor1, columna2 = valor2 WHERE condición;. Esto te permite cambiar los detalles específicos de un registro, similar a cómo editarías una frase o palabra en tu diario para que refleje mejor lo que quieres decir. Es una forma de asegurarte de que los datos en tu tabla estén siempre actualizados y correctos.",
+      "index": 3
+    },
+    {
+      "title": "Eliminar  un registro de una tabla SQL",
+      "description": "Eliminar un registro de una tabla en SQL es como borrar una línea de texto en un documento. Utilizas la sentencia DELETE FROM nombre_tabla WHERE condición;. Esto te permite eliminar específicamente los datos que ya no necesitas, asegurándote de que tu tabla contenga solo la información relevante, tal como eliminarías una oración que ya no contribuye al propósito de tu texto.",
+      "index": 4
+    },
+    {
+      "title": "Clave primaria en SQL",
+      "description": "Una clave primaria en SQL es como tu número de identificación personal; es única para cada registro en una tabla asegurando que cada fila pueda ser identificada de manera exclusiva. Esto evita duplicados y crea un medio claro y ordenado para referenciar registros específicos, facilitando la organización y el acceso a la información dentro de la base de datos",
+      "index": 5
+    },
+    {
+      "title": "Restringir los resultados en una tabla SQL",
+      "description": "Para restringir los resultados de una consulta SQL usando una condición, es como aplicar un filtro a tus fotos. Usas la cláusula WHERE seguida de una condición específica, lo que permite mostrar solo aquellos registros que cumplen con tus criterios. Es una forma de enfocarse en la información que realmente importa o interesa, dejando de lado todo lo demás, igual que cuando seleccionas solo las fotos que quieres mostrar.",
+      "index": 6
+    },
+    {
+      "title": "Qué es un Join y para que se utiliza",
+      "description": "Un JOIN en SQL es como una reunión de amigos de diferentes ciudades en un solo lugar. Se utiliza para combinar filas de dos o más tablas, basándose en una columna relacionada entre ellas. Esto te permite crear una vista más completa de la información que está distribuida en varias tablas, similar a cómo reunir a todos tus amigos te da una visión completa de tu círculo social.",
+      "index": 7
+    },
+    {
+      "title": "Agrupar resultados  por una columna en SQL",
+      "description": "Para agrupar los resultados de una consulta SQL, se utiliza la cláusula GROUP BY. Es como organizar tus libros en estantes según su género; GROUP BY te permite agrupar filas que tienen el mismo valor en una o más columnas. Esto es especialmente útil cuando se combinan con funciones de agregación (como COUNT, SUM, AVG) para realizar cálculos sobre cada grupo de datos, ofreciéndote una visión organizada y detallada de tu información.",
+      "index": 8
+    },
+    {
+      "title": "Función para contar el número de registros",
+      "description": "Para contar el número de registros que cumplen una condición en SQL, se utiliza la función COUNT(). Es como contar cuántas manzanas verdes hay en un cesto lleno de manzanas de diferentes colores; COUNT() te ayuda a determinar la cantidad de registros que coinciden con tu criterio específico, dándote una idea clara del volumen de datos que satisfacen esa condición.",
+      "index": 9
+    },
+    {
+      "title": "Crear una tabla con columnas especificas",
+      "description": "Crear una tabla en SQL con columnas específicas es como construir una estantería y decidir el número y tipo de compartimentos que tendrá. Usas la sentencia CREATE TABLE, seguida del nombre de la tabla, y luego especificas cada columna con su nombre y tipo de dato entre paréntesis. Cada columna representa un tipo específico de información, similar a cómo cada compartimento de tu estantería está destinado a almacenar un tipo particular de objeto. ",
+      "index": 10
+    }
+  ],
+  "medium": [
+    {
+      "title": "Como utilizar un INNER JOIN",
+      "description": "Un INNER JOIN en SQL es como encontrar puntos en común entre dos listas. Solo se muestran los elementos que aparecen en ambas listas, ignorando los que son exclusivos de cada una.",
+      "index": 1
+    },
+    {
+      "title": "Alias en SQL y como utilizarlo",
+      "description": "Un alias en SQL es como un apodo que le das a una tabla o columna para referirte a ella de manera más corta o clara dentro de tu consulta. Lo utilizas después de especificar el nombre real de la tabla o columna, seguido de la palabra AS y el alias elegido. Esto simplifica la escritura y lectura de tus consultas, especialmente cuando trabajas con nombres largos o múltiples tablas.",
+      "index": 2
+    },
+    {
+      "title": "Seleccionar registros unicos en una consulta SQL",
+      "description": "Para seleccionar registros únicos en una columna con SQL, se utiliza la palabra clave DISTINCT justo después de SELECT. Es como filtrar una lista para mostrar solo nombres diferentes, eliminando cualquier repetición. Esto te permite ver la variedad de valores que tiene una columna, sin duplicados.",
+      "index": 3
+    },
+    {
+      "title": "Cláusula HAVING como se utiliza",
+      "description": "La cláusula HAVING en SQL se utiliza como un filtro, pero después de agrupar los datos con GROUP BY. Imagina que ya has agrupado frutas por tipo y ahora quieres ver solo aquellos tipos que tienes en cantidad mayor a cinco. HAVING te permite aplicar esta condición, funcionando de manera similar a WHERE pero para grupos, no para filas individuales.",
+      "index": 4
+    },
+    {
+      "title": "Una subconsulta en SQL?",
+      "description": "Una subconsulta en SQL es como una pregunta dentro de otra pregunta. Se utiliza para realizar una consulta dentro de otra, permitiendo usar el resultado de la primera como parte de la condición para la consulta exterior. Piensa en ello como buscar en un libro una definición que te ayude a entender otra definición más compleja. Las subconsultas pueden aparecer en varias partes de la consulta principal, como en las cláusulas SELECT, FROM, o WHERE, adaptándose a la necesidad de información detallada o condicional.",
+      "index": 5
+    },
+    {
+      "title": "Transaccio en SQL",
+      "description": "Manejar transacciones en SQL es como tener un control de 'deshacer' y 'hacer' para un grupo de acciones. Inicias una transacción con BEGIN TRANSACTION, lo que permite agrupar varias operaciones como una sola unidad. Si todo sale bien, confirmas los cambios con COMMIT, como decir 'sí, guarden todo eso'. Pero si algo sale mal o cambias de opinión, puedes revertir todas las acciones hasta el inicio de la transacción con ROLLBACK, funcionando como un botón de 'deshacer' para volver al estado anterior.",
+      "index": 6
+    },
+    {
+      "title": "Sentencia para eliminar registros duplicados",
+      "description": " Para eliminar registros duplicados de un resultado de consulta en SQL. se utiliza la palabra clave DISTINCT justo después de SELECT. Esto asegura que solo se devuelvan valores únicos en tus resultados. eliminando cualquier repetición dentro de la selección especificada.",
+      "index": 7
+    },
+    {
+      "title": "Modificar el nombre de una columna SQL",
+      "description": "Para modificar el nombre de una columna o una tabla en SQL, se utilizan diferentes sentencias dependiendo del sistema de gestión de bases de datos. Para cambiar el nombre de una tabla, generalmente se usa la sentencia ALTER TABLE nombreTabla RENAME TO nuevoNombreTabla;. Para cambiar el nombre de una columna, el comando puede variar, pero suele ser algo similar a ALTER TABLE nombreTabla RENAME COLUMN nombreColumnaActual TO nuevoNombreColumna;. Estas operaciones son como renombrar un archivo o carpeta en tu computadora, ajustando su identificador a algo que tenga más sentido o sea más relevante para ti.",
+      "index": 8
+    },
+    {
+      "title": "Índice en SQl y para que se utiliza",
+      "description": "Un índice en SQL es como el índice de un libro. Se utiliza para acelerar la búsqueda de registros en una tabla de la base de datos, haciendo que el proceso de encontrar información específica sea mucho más rápido. Al igual que puedes buscar rápidamente un tema en un libro consultando su índice, SQL puede recuperar datos de manera eficiente gracias a los índices definidos en las tablas. Sin embargo, al igual que un libro con demasiados índices puede ser más difícil de manejar, demasiados índices en una tabla pueden ralentizar las operaciones de inserción, actualización y eliminación, por lo que es importante usarlos de manera equilibrada.",
+      "index": 9
+    },
+    {
+      "title": "cláusulas UNION y UNION ALL en SQL",
+      "description": "Las cláusulas UNION y UNION ALL en SQL son como juntar piezas de distintos rompecabezas que encajan perfectamente para formar uno más grande. UNION se utiliza para combinar los resultados de dos o más consultas en un solo conjunto de resultados, eliminando duplicados. Es como si tomaras los distintos grupos de piezas (resultados de las consultas) y los unieras, asegurándote de no repetir ninguna pieza idéntica.",
+      "index": 10
+    }
+  ]
 }

@@ -1,62 +1,106 @@
 {
-    "basic": [
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 1
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 2
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 3
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 4
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 5
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 6
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 7
-        }
-    ],
-    "medium": [
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 1
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 2
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 3
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 4
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 5
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 6
-        },
-        {
-            "description": "Java es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros",
-            "index": 7
-        }
-    ]
+  "basic": [
+    {
+      "title": "Próposito de Static",
+      "description": "La palabra clave static se utiliza para indicar que un método o variable pertenece a la clase en sí, en lugar de a una instancia de la clase. Esto significa que puedes acceder a este método o variable sin necesidad de crear un objeto de la clase.",
+      "index": 1
+    },
+    {
+      "title": "Instancia ",
+      "description": "Una instancia de clase es un objeto creado a partir de una clase. Cada objeto tiene su propio conjunto de variables de instancia, lo que permite a diferentes objetos tener estados diferentes.",
+      "index": 2
+    },
+    {
+      "title": "Método Main",
+      "description": "El método main es el punto de entrada de cualquier programa Java. Es el primer método que se ejecuta cuando un programa comienza y se usa para iniciar el flujo de ejecución del programa.",
+      "index": 3
+    },
+    {
+      "title": "Significado de API",
+      "description": "API significa Application Programming Interface. Es un conjunto de rutinas, protocolos y herramientas para construir software y aplicaciones. Una API de Java define cómo los componentes del software interactúan entre sí.",
+      "index": 4
+    },
+    {
+      "title": "Variable de tipo entero",
+      "description": "En Java, una variable de tipo entero se declara utilizando la palabra clave int, seguida de un identificador (nombre de la variable) y opcionalmente se puede inicializar con un valor. Ejemplo: int num = 10;.",
+      "index": 5
+    },
+    {
+      "title": "Bucle",
+      "description": "Un bucle permite repetir una acción múltiples veces. Java tiene varios tipos de bucles, y for es uno de ellos. Se utiliza para ejecutar un bloque de código un número determinado de veces.",
+      "index": 6
+    },
+    {
+      "title": "Sobrecarga de métodos",
+      "description": " La sobrecarga de métodos ocurre cuando dos o más métodos en una clase tienen el mismo nombre pero diferentes parámetros. Esto permite métodos con el mismo nombre que realizan diferentes tareas basadas en los parámetros pasados.",
+      "index": 7
+    },
+    {
+      "title": "Operador para comparar dos valores en java",
+      "description": " El operador == se utiliza para comparar dos valores para ver si son iguales. Si los valores son iguales, el resultado de la comparación es true; si no, es false.",
+      "index": 8
+    },
+    {
+      "title": "Heredar de una clase",
+      "description": "La palabra clave extends se utiliza en Java para heredar propiedades y métodos de otra clase. Esto permite la reutilización de código y la creación de jerarquías de clases.",
+      "index": 9
+    },
+    {
+      "title": "Estructura de datos para almacenar elementos",
+      "description": "Un array es una estructura de datos que se utiliza para almacenar elementos en un orden específico. Los elementos de un array se acceden mediante índices.",
+      "index": 10
+    }
+  ],
+  "medium": [
+    {
+      "title": "Caracteristica para permitir que un programa escrito se ejecute en cualquier sistema operativo22",
+      "description": "La portabilidad es una característica clave de Java, permitiendo que un programa escrito en Java se ejecute en cualquier sistema operativo sin necesidad de modificaciones. Esto es posible gracias a la Máquina Virtual de Java (JVM) que interpreta el código byte de Java.",
+      "index": 1
+    },
+    {
+      "title": "Principio de la programación para ocultar los detalles internos",
+      "description": " La encapsulación es el principio mediante el cual se ocultan los detalles internos de la implementación de una clase, exponiendo solo los métodos y propiedades necesarios para el uso de la clase. Esto se logra mediante el uso de modificadores de acceso como private, public, y protected.",
+      "index": 2
+    },
+    {
+      "title": "Excepción en Java",
+      "description": "Una excepción en Java es un error que ocurre durante la ejecución del programa y que interrumpe el flujo normal de instrucciones. Imagina que estás siguiendo una receta y te das cuenta de que te falta un ingrediente esencial; este imprevisto interrumpe el proceso de cocinar, similar a cómo una excepción interrumpe un programa. Java utiliza bloques de código try-catch para manejar estas situaciones, permitiendo al programa reaccionar a estos errores de forma controlada, en lugar de detenerse completamente. Las excepciones permiten que tu programa sea más robusto y seguro, manejando los errores de manera efectiva.",
+      "index": 3
+    },
+    {
+      "title": "Constructor",
+      "description": "Un constructor en Java es un bloque especial de código que se llama automáticamente cuando se crea una instancia de un objeto. Funciona como una receta para preparar tu objeto, estableciendo los valores iniciales de sus atributos o realizando cualquier inicio necesario. Piensa en ello como en configurar tu videojuego antes de empezar a jugar, seleccionando tu personaje y ajustando las configuraciones; el constructor prepara tu objeto para que esté listo para usar.",
+      "index": 4
+    },
+    {
+      "title": "Rendimiento de un programa que utiliza múltiples hilos",
+      "description": " Reducir el uso de sincronización puede mejorar el rendimiento de un programa Java que utiliza múltiples hilos. La sincronización excesiva puede llevar a la contención de hilos y reducir la concurrencia, afectando negativamente el rendimiento.",
+      "index": 5
+    },
+    {
+      "title": "Liberación de recursos después de su uso",
+      "description": "La recolección de basura es un proceso automatizado en Java que identifica y elimina los objetos que ya no son utilizados por un programa, asegurando así que los recursos sean liberados automáticamente y la memoria sea administrada eficientemente",
+      "index": 6
+    },
+    {
+      "title": "Serialización",
+      "description": "La serialización en Java es el proceso de convertir un objeto en un array de bytes para, por ejemplo, guardar el objeto en un archivo o enviarlo a través de la red.",
+      "index": 7
+    },
+    {
+      "title": "Ventaja principal del pollimorfismo",
+      "description": "El polimorfismo permite que un objeto sea referenciado por referencias de más de un tipo, lo que facilita la reutilización de código y mejora la flexibilidad del diseño del programa.",
+      "index": 8
+    },
+    {
+      "title": "Paquete en java y para que se utiliza",
+      "description": "Un paquete en Java es un espacio de nombres que organiza un conjunto de clases e interfaces relacionadas. Los paquetes se utilizan para evitar conflictos de nombres y para controlar el acceso a las clases e interfaces, facilitando la gestión del código",
+      "index": 9
+    },
+    {
+      "title": "Encapsulación en java",
+      "description": "El principio de encapsulación en Java asegura que los detalles internos de la implementación de una clase están ocultos del exterior. Esto se logra mediante el uso de modificadores de acceso, permitiendo que un objeto controle cómo se accede a su estado interno y cómo se modifican sus datos, protegiendo así su integridad",
+      "index": 10
+    }
+  ]
 }
