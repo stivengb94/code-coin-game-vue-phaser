@@ -104,9 +104,9 @@ const onCloseTest = () => {
         <v-col cols="12" sm="12"  lg="8">
             <PhaserGame ref="phaserRef" @current-active-scene="currentScene" />
         </v-col>
-        <v-col cols="12" sm="12"  lg="4">
+        <v-col cols="12" sm="12"  lg="4" class="d-flex justify-center">
             <div>
-                <h1>Estas Aprediendo</h1>
+                <h3>Estas Aprediendo</h3>
                 <p>Nivel: {{ $route.query?.levelName }}</p>
                 <p>De: {{ $route.query?.categoryName }}</p>
                 <v-btn @click="onBack" color="indigo-darken-3" rounded="lg" block>Salir</v-btn>

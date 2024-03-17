@@ -30,7 +30,7 @@ export class Game extends Scene {
     cursors: Phaser.Types.Input.Keyboard.CursorKeys | undefined; // Cambio aquí
     halfScreenWidth: number = 1024;
     backgroundWidth = 5048; // Ancho del fondo
-    backgroundHeight = 768; // Altura del fondo
+    backgroundHeight = 568; // Altura del fondo
     backgroundScale = 0.5; // Escala del fondo para que cubra toda la pantalla
     numberOfPlatforms = 5; // Número de plataformas que deseas agregar
     logoTween: Phaser.Tweens.Tween | null;
@@ -185,7 +185,9 @@ export class Game extends Scene {
 
         //Aplicar movimeinto al score
         if (this.scoreMgr?.scoreText) {
-            const x = this.player.x - this.cameras.main.width / 2 + 20;
+            const cameraScrollX = this.cameras.main.scrollX;
+
+            const x = (this.cameras.main.width / 2) + cameraScrollX - 150;
             this.scoreMgr?.scoreText.setPosition(x, 10);
         }
 
@@ -201,7 +203,7 @@ export class Game extends Scene {
                 gameObject.destroy(); // Elimina la moneda del juego
                 // Incrementa la puntuación del jugador
                 this.scoreMgr.increment();
-               // EventBus.emit("scene-coin-capture", data);
+                EventBus.emit("scene-coin-capture", data);
             }
 
             if (
