@@ -169,13 +169,15 @@ const restart = async ()  => {
 @media (max-width: 600px) {
   .home {
     flex-direction: column;
+    padding: 10px;
 
     h1 {
-      font-size: calc(var(--fontSize) + 15pt);
+      font-size: calc(var(--fontSize) + 10pt);
     }
 
     table {
       th, td {
+        font-size: 15px;
         min-width: auto;
         img {
           height: 50pt;
