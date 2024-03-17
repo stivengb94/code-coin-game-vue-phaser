@@ -141,7 +141,7 @@ export class Game extends Scene {
 
     drawBush() {
         this.add.image(1055, 420, "bush").setScale(1.5);
-        this.add.image(755, 500, this.params.buildBush()).setScale(0.5);
+        this.add.image(755, 250, this.params.buildBush()).setScale(0.5);
     }
 
     drawCoins() {
@@ -222,6 +222,5 @@ export class Game extends Scene {
         this.buttonLeft.x = (this.cameras.main.width / 2) - 100 + cameraScrollX;
         this.buttonRight.x = (this.cameras.main.width / 2) + 100 + cameraScrollX;
         this.buttonUp.x = (this.cameras.main.width / 2) + cameraScrollX;
-
     }
 }
