@@ -5,12 +5,12 @@
         <v-card-text>
           <h1 v-if="isFinalize">{{ point }}</h1>
           <v-container>
-            <v-form ref="form">
+            <v-form ref="form" v-model="formValid">
               <div v-for="item in questions" :key="item.code">
                 <v-card class="mb-5">
                   <v-card-text>
                     <h3>{{ item.name }}</h3>
-                    <v-radio-group v-model="answers[item.code]" :mandatory="false" :disabled="isFinalize">
+                    <v-radio-group v-model="answers[item.code]" :mandatory="true" :disabled="isFinalize">
                       <v-radio v-for="option in item.options" :key="option" :label="option" :value="option">
                         <template v-slot:label>
                           <div v-if="answers[item.code] == option" :class="{
@@ -24,7 +24,7 @@
                   </v-card-text>
                 </v-card>
               </div>
-              <v-btn v-if="!isFinalize" color="primary" @click="submitAnswers">Finalizar</v-btn>
+              <v-btn v-if="!isFinalize" color="primary" @click="submitAnswers" :disabled="!formValid">Finalizar</v-btn>
               <v-btn v-else color="primary" @click="onClose">Cerrar</v-btn>
             </v-form>
           </v-container>
@@ -33,6 +33,7 @@
     </template>
   </v-dialog>
 </template>
+
 <script setup lang="ts">
 import { type Question, type QuizzRepository, type LevelCode, CategoryCode } from "@domain/index";
 import { AppModules, Ioc } from "@di/index";
@@ -53,6 +54,7 @@ const quizzRepository = Ioc.instance.di.resolve<QuizzRepository>(AppModules.Quiz
 
 const dialog = ref<Boolean>(false);
 const answers = ref<Record<string, string>>({});
+const formValid = ref<Boolean>(false);
 const isFinalize = ref<Boolean>(false);
 const point = ref<String>("")
 
